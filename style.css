@@ -11,13 +11,13 @@ body {
     text-align: center;
     height: auto;
     width: 100%;
-    background-color: lightblue;
+    background-color: green;
 }
 
 #header {
     height: auto;
     width: 100%;
-    background-color: lightblue;
+    background-color: green;
 }
 
 .link {
@@ -28,7 +28,8 @@ body {
 
 #footer {
     text-align: center;
+    color: dimgray;
     height: auto;
     width: 100%;
-    background-color: lightblue;
+    background-color: green;
 }
