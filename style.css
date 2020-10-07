@@ -17,7 +17,7 @@ body {
 #header {
     height: auto;
     width: 100%;
-    background-color: green;
+    background-color: lightgreen;
 }
 
 .link {
@@ -31,5 +31,5 @@ body {
     color: whitesmoke;
     height: auto;
     width: 100%;
-    background-color: green;
+    background-color: lightgreen;
 }
