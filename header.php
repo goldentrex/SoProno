@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-
-<head>
-    <meta charset="utf-8">
+<header>
     <link rel="stylesheet" href="style.css">
     <title> SoProno </title>
     <div id='header'>
@@ -16,4 +13,5 @@
         <a class="link" href="prono.php"> Nos pronos</a>
         <a class="link" href="quizz.php"> Quizz</a>
     </div>
-</head>
+</header>
+
