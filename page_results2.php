@@ -7,11 +7,7 @@
     <?php include 'header.php'?>
     
     <section>
-       Work in progress quizz <br/><br/>
-
-		<a class="link" href="page_quizz1.php"> Quizz 1 </a><br/>
-        <a class="link" href="page_quizz2.php"> Quizz 2 </a><br/>
-
+       Work in progress results2
     </section>
     <footer>
         <?php include 'footer.php'?>
