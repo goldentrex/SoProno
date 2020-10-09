@@ -3,8 +3,11 @@
     padding: 0;
 }
 
+html,
 body {
     position: relative;
+    width: 100%;
+    height: auto;
     background-color: white;
 }
 
@@ -27,20 +30,18 @@ body {
     margin-left: 1rem;
 }
 
-#footer {
-    position: relative;
-    text-align: center;
-    width: 100%;
-    margin-left: 0px;
-    vertical-align: bottom;
+.site-footer {
+    font-family: sans-serif;
+    font-style: italic;
+    position: absolute;
     bottom: 0px;
     left: 0px;
+    width: 100%;
+    text-align: center;
+    margin-left: 0px;
+    padding: 15px 2px 15px 2px;
     background-color: lightgreen;
-    height: 50px;
-}
-
-html {
-    position: relative;
+    height: 45px;
 }
 
 .introduction {
@@ -51,9 +52,9 @@ html {
 }
 
 .question {
+    position: relative;
     font-weight: bold;
     color: darkolivegreen;
-    background-color: honeydew;
     height: 15px;
     text-align: justify;
     text-align: center;
@@ -63,8 +64,8 @@ html {
 }
 
 .blocrep {
+    position: relative;
     block-size: auto;
-    background-color: snow;
     color: black;
     text-align: justify;
     text-align-last: center;
@@ -74,18 +75,20 @@ html {
 }
 
 .respbutton {
+    position: relative;
     height: 20px;
     text-align: center;
+    padding: 15px 2px 15px 2px;
 }
 
 .clelogin {
     margin-left: 70%;
     margin-top: 2%;
-    border-radius:12px 0 12px 0;
+    border-radius: 12px 0 12px 0;
     background: #f5f5f5;
-    border:none;
-    color:#555;
-    font:bold 12px Verdana;
-    padding:6px 0 6px 0;
-    box-shadow:1px 1px 3px #999;
+    border: none;
+    color: #555;
+    font: bold 12px Verdana;
+    padding: 6px 0 6px 0;
+    box-shadow: 1px 1px 3px #999;
 }
