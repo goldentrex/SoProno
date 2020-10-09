@@ -28,7 +28,7 @@ body {
 }
 
 #footer {
-    position: absolute;
+    position: relative;
     text-align: center;
     width: 100%;
     margin-left: 0px;
@@ -37,6 +37,10 @@ body {
     left: 0px;
     background-color: lightgreen;
     height: 50px;
+}
+
+html {
+    position: relative;
 }
 
 .introduction {
@@ -67,4 +71,9 @@ body {
     margin-left: 15px;
     margin-top: 10px;
     margin-bottom: 25px;
+}
+
+.respbutton {
+    height: 20px;
+    text-align: center;
 }
