@@ -4,8 +4,11 @@
     <div id='header'>
         <h1 id="headerTitle">
             <a class="link" href="homepage.php">
-                <img src="soprono_logo.png" alt="SoProno">
+                <img src="./img/soprono_logo.png" alt="SoProno">
             </a>
+            <form action="accountpage.php" class="login">
+                <input type="submit" value="Login" name="Login"/>
+            </form>
         </h1>
         <br/>
         <a class="link" href="homepage.php"> Home Page </a>
