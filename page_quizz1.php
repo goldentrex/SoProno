@@ -52,10 +52,11 @@
        <input type="checkbox" name="player3" id="player3" /> <label for="player3">Joueur 3</label><br />
     </div><br />
 
-    <br /><input type="submit" value="Envoyer" /><br />
+    
 
 
    </form>
+   <input type="submit" value="Envoyer" />
     
 </body>
 

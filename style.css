@@ -27,14 +27,21 @@ body {
     margin-left: 1rem;
 }
 
-footer{
-    position: fixed;
+#footer {
+    position: absolute;
     text-align: center;
-    width:100%;
+    width: 100%;
     margin-left: 0px;
     vertical-align: bottom;
     bottom: 0px;
     left: 0px;
     background-color: lightgreen;
     height: 50px;
+}
+
+html {
+    font-family: Georgia;
+    text-align: center;
+    position: relative;
+    margin-left: auto;
 }
