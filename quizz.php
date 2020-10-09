@@ -7,7 +7,7 @@
     <?php include 'header.php'?>
     
     <section>
-       Work in progress quizz <br/><br/>
+       <strong>Vous souhaitez tester vos connaissance sur le football avant l'euro ? Nos quizz sont fait pour vous !</strong>  <br/><br/>
 
 		<a class="link" href="page_quizz1.php"> Quizz 1 </a><br/>
         <a class="link" href="page_quizz2.php"> Quizz 2 </a><br/>

@@ -39,9 +39,32 @@ body {
     height: 50px;
 }
 
-html {
+.introduction {
     font-family: Georgia;
     text-align: center;
     position: relative;
-    margin-left: auto;
+    margin-top: 15px;
+}
+
+.question {
+    font-weight: bold;
+    color: darkolivegreen;
+    background-color: honeydew;
+    height: 15px;
+    text-align: justify;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.blocrep {
+    block-size: auto;
+    background-color: snow;
+    color: black;
+    text-align: justify;
+    text-align-last: center;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
