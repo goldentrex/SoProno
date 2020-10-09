@@ -5,10 +5,11 @@
         <h1 id="headerTitle">
             <a class="link" href="homepage.php">
                 <img src="./img/soprono_logo.png" alt="SoProno">
+                    
             </a>
-            <form action="accountpage.php" class="login">
-                <input type="submit" value="Login" name="Login"/>
-            </form>
+            <form action="accountpage.php">
+                        <input type="submit" class="clelogin" value=" Login " name="Login"/>
+                    </form>
         </h1>
         <br/>
         <a class="link" href="homepage.php"> Home Page </a>
