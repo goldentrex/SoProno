@@ -25,3 +25,26 @@
     max-width: 100px;
     height: auto;
 }
+
+#lastMatch {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: separate;
+  width: 100%;
+}
+
+#lastMatch td, #lastMatch th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#lastMatch tr:nth-child(even){background-color: #f2f2f2;}
+
+#lastMatch tr:hover {background-color: #ddd;}
+
+#lastMatch th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}

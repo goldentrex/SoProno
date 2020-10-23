@@ -24,8 +24,29 @@
             Le terrain est tout vert cette année, comme d'habitude...
             <br />
          </div>
+
       </div><br />
     </news>
+
+
+    <nextMatch>
+        <div class="newsTitle"> Le dernier match</div><br />
+         <div class="newsContent">
+            <table id=lastMatch>
+              <tr>
+                <th>REAL VS PSG</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>0</td>
+              </tr>
+
+            </table> 
+         </div>
+
+      </div><br />
+
+    </nextMatch>
     <footer>
         <?php include 'footer.php'?>
     </footer>
