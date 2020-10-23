@@ -1,7 +1,13 @@
-<footer class="footer">
+<footer class="site-footer">
     <link rel="stylesheet" href="style.css">
+    
     <div id="footer">
-        <span>@2020 - So Prono - ISEN Lille</span><br>
-        <span>Contact : <em><a href="mailto:contact@soprono.fr">contact@soprono.fr</a></em></span>
+        <span>@2020 - So Prono - ISEN Lille</span>
+        <br>
+        <span>Contact : 
+            <em>
+                <a href="mailto:contact@soprono.fr">contact@soprono.fr</a>
+            </em>
+        </span>
     </div>
 </footer>
