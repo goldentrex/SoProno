@@ -7,9 +7,18 @@
                 <img src="./img/soprono_logo.png" alt="SoProno">
                     
             </a>
-            <form action="accountpage.php">
+            <form action="login.php">
                         <input type="submit" class="clelogin" value=" Login " name="Login"/>
+                        <form action="accountpage.php">
+                            <input type="submit" class="account" value="Créer son compte" name="account"> 
+                        
+                        </form>
+                        
                     </form>
+            
+            
+
+                    
         </h1>
         <br/>
         <a class="link" href="homepage.php"> Home Page </a>

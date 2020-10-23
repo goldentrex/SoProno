@@ -81,7 +81,8 @@ body {
     padding: 15px 2px 15px 2px;
 }
 
-.clelogin {
+.clelogin,
+.account {
     margin-left: 70%;
     margin-top: 2%;
     border-radius: 12px 0 12px 0;
