@@ -12,7 +12,7 @@ body {
     background-color: white;
 }
 
-.intro_account {
+.connexion {
     font-family: sans-serif;
     font-style: italic;
     text-align: center;
@@ -21,18 +21,18 @@ body {
 }
 
 form {
-    font-weight: bold;
     font-family: sans-serif;
-    text-align: center;
-    padding-bottom: 15px;
-    display: flexbox;
+    padding: 15px 15px 15px 15px;
+    text-align: justify;
+    display: block;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
 }
 
-label,
-input {
+.box {
+    font-family: sans-serif;
     display: block;
-    text-align: left;
     box-sizing: border-box;
-    margin-left: 15px;
     -webkit-text-size-adjust: 100%;
+    display: flex;
 }
