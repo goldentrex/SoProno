@@ -1,8 +1,8 @@
 <html>
 <head>
     <title>SoProno</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="home_page_style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home_page_style.css" />
 </head>
 <body>
     <?php include 'header.php'?>

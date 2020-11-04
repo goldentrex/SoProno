@@ -4,8 +4,8 @@
 <html>
 <head>
     <title>Connexion</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css" />
 </head>
 <body>
     <?php include 'header.php'?>
@@ -26,7 +26,7 @@
             <input class="box" type="password" name="password" id="user_password" required/>
         </p><br />
 
-        <input type="submit" value="Se connecter !">
+        <input type="submit" value="Se connecter !" id="login">
     </form>
 
 

@@ -4,8 +4,8 @@
 <html>
 <head>
     <title>Inscription</title>
-    <link rel="styleshett" href="style.css"/>
-    <link rel="stylesheet" href="accountpage_style.css" />
+    <link rel="styleshett" href="css/style.css"/>
+    <link rel="stylesheet" href="css/register.css" />
 </head>
 <body>
     <?php include 'header.php'?>
@@ -51,36 +51,7 @@
     </form>
 
 
-    <?php 
-        include ('accountpage.php, database.php');
-        if(isset($_POST['inscription'])){
-            extract($_POST);
 
-
-            
-            if($password == $password_confirmation){
-                    
-                $query = $db->prepare('INSERT INTO users(firstname,lastname,user_mail,birth_date,password) VALUES(:firstname, :lastname, :user_mail ,:birth_date,:password)');
-                $query->execute([
-                    'firstname' => $firstname,
-                    'lastname' => $lastname,
-                    'birth_date' => $birth_date,
-                    'user_mail' => $user_mail,
-                    'password' => $password
-                ]);
-                
-
-                }else{
-                    echo ('vos mots de passe ne correspondent pas !');
-                }
-                
-
-
-            }
-        
-        
-    ?>
-    
     <footer>
         <?php include 'footer.php'?>
     </footer>

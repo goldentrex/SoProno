@@ -1,5 +1,5 @@
 <footer class="site-footer">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     
     <div id="footer">
         <span>@2020 - So Prono - ISEN Lille</span>

@@ -1,5 +1,5 @@
 <header>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title> SoProno </title>
     <div id='header'>
         <h1 id="headerTitle">
@@ -11,8 +11,8 @@
                         <input type="submit" class="clelogin" value=" Login " name="Login"/>  
             </form>
 
-            <form action="accountpage.php">
-                            <input type="submit" class="account" value="Créer son compte" name="account"> 
+            <form action="register.php">
+                        <input type="submit" class="account" value="Créer son compte" name="account"> 
             </form>
             
             
