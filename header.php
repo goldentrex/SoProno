@@ -8,11 +8,11 @@
                     
             </a>
             <form action="login.php">
-                        <input type="submit" class="clelogin" value=" Login " name="Login"/>  
+                        <input type="submit" class="clelogin" value=" Se connecter " name="Login"/>  
             </form>
 
             <form action="accountpage.php">
-                            <input type="submit" class="account" value="Créer son compte" name="account"> 
+                            <input type="submit" class="account" value=" Créer son compte " name="account"> 
             </form>
             
             
