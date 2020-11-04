@@ -15,26 +15,26 @@
     </div>
 
     <form method="post">
-        <!-- <p>
+        <p>
             <label for="name">Votre nom :</label><br />
-            <input type="text" name="mail_adress" id="name" placeholder="Nom"/>
+            <input type="text" name="lastname" id="lastname" placeholder="Nom" required/>
         </p><br />
 
         
         <p>
             <label for="prenom">Votre prénom :</label><br />
-            <input type="text" name="prenom" id="user_name" placeholder="Prenom"/>
-        </p><br /> -->
+            <input type="text" name="firstname" id="firstname" placeholder="Prenom" required/>
+        </p><br />
 
         
         <p>
             <label for="mail">Votre adresse mail :</label><br />
-            <input type="mail" name="user_mail" id="user_mail" placeholder="Mail"/>
+            <input type="mail" name="user_mail" id="user_mail" placeholder="Mail" required/>
         </p><br />
 
         <!-- <p> 
             <label for="birth_date">Votre date de naissance :</label><br />
-            <input type="date" name="birth_date" id="user_birth"/>
+            <input type="date" name="birth_date" id="birth_date" required/>
         </p><br /> -->
 
         <p> 
@@ -44,7 +44,7 @@
 
         <p> 
             <label for="password">Confirmez votre mot de passe :</label><br />
-            <input type="password" name="password2" id="password2" placeholder="Confirmer le mot de passe"/>
+            <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirmer le mot de passe"/>
         </p><br />
 
         <p><input type="submit" name="inscription" value="inscription" id="inscription"></p>
@@ -54,19 +54,26 @@
     <?php 
         if(isset($_POST['inscription'])){
             extract($_POST);
-            if(!empty($user_mail)&&!empty($password)&&!empty($password2)){
-                if($password == $password2){
+
+
+            if(!empty($lastname)&&!empty($firstname)&&!empty($user_mail)&&!empty($password)&&!empty($password2)){
+                if($password == $password_confirmation){
                     include 'database.php';
                     global $db;
 
-                    $query = $db->prepare("INSERT INTO users(user_mail,password) VALUES(:user_mail,:password)");
+                    $query = $db->prepare("INSERT INTO users(lastname,firstname,user_mail,password) VALUES('lastname','firstname','user_mai'l','password')");
                     $query->execute([
+                        'lastname'=>$lastname,
+                        'firstname'=>$firstname,
+                        'birth_date'=>$birth_date,
                         'user_mail'=>$user_mail,
                         'password' => $password
                     ]);
+                    
 
 
                 }
+                
 
             }
         }
