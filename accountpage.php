@@ -61,7 +61,7 @@
                     include 'database.php';
                     global $db;
 
-                    $query = $db->prepare("INSERT INTO users(lastname,firstname,user_mail,password) VALUES('lastname','firstname','user_mai'l','password')");
+                    $query = $db->prepare("INSERT INTO users(lastname,firstname,user_mail,password) VALUES('lastname','firstname','user_mail','password')");
                     $query->execute([
                         'lastname'=>$lastname,
                         'firstname'=>$firstname,
