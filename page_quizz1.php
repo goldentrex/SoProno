@@ -15,7 +15,7 @@
     <br />
     <hr>
 
-    <form>
+    <form method="post" action="page_results1.php">
        
       <div>
          <div class="question">
