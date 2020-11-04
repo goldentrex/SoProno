@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 
 <?php 
-        include('accountpage.php');
+        include ('accountpage.php');
         include ('database.php');
         if(isset($_POST['inscription'])){
             extract($_POST);
