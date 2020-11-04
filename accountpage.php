@@ -32,10 +32,10 @@
             <input type="mail" name="user_mail" id="user_mail" placeholder="Mail" required/>
         </p><br />
 
-        <!-- <p> 
+        <p> 
             <label for="birth_date">Votre date de naissance :</label><br />
             <input type="date" name="birth_date" id="birth_date" required/>
-        </p><br /> -->
+        </p><br />
 
         <p> 
             <label for="password">Mot de passe :</label><br />
@@ -52,31 +52,33 @@
 
 
     <?php 
+        include ('accountpage.php, database.php');
         if(isset($_POST['inscription'])){
             extract($_POST);
 
 
-            if(!empty($lastname)&&!empty($firstname)&&!empty($user_mail)&&!empty($password)&&!empty($password2)){
-                if($password == $password_confirmation){
-                    include 'database.php';
-                    global $db;
-
-                    $query = $db->prepare("INSERT INTO users(lastname,firstname,user_mail,password) VALUES('lastname','firstname','user_mail','password')");
-                    $query->execute([
-                        'lastname'=>$lastname,
-                        'firstname'=>$firstname,
-                        'birth_date'=>$birth_date,
-                        'user_mail'=>$user_mail,
-                        'password' => $password
-                    ]);
+            
+            if($password == $password_confirmation){
                     
+                $query = $db->prepare('INSERT INTO users(firstname,lastname,user_mail,birth_date,password) VALUES(:firstname, :lastname, :user_mail ,:birth_date,:password)');
+                $query->execute([
+                    'firstname' => $firstname,
+                    'lastname' => $lastname,
+                    'birth_date' => $birth_date,
+                    'user_mail' => $user_mail,
+                    'password' => $password
+                ]);
+                
 
-
+                }else{
+                    echo ('vos mots de passe ne correspondent pas !');
                 }
                 
 
+
             }
-        }
+        
+        
     ?>
     
     <footer>

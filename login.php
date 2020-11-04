@@ -18,12 +18,12 @@
     <form method="post">
         <p>
             <label for="name">Identifiant :</label><br />
-            <input class="box" type="mail" name="name" id="user_mail"/>
+            <input class="box" type="mail" name="name" id="user_mail" required/>
         </p><br />
 
         <p> 
             <label for="password">Mot de passe :</label>
-            <input class="box" type="password" name="password" id="user_password" />
+            <input class="box" type="password" name="password" id="user_password" required/>
         </p><br />
 
         <input type="submit" value="Se connecter !">
