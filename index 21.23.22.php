@@ -1,14 +1,35 @@
-<?php start_session(); 
-include 'database.php'?>
+<?php 
+
+$page = $_GET['page'] ?? '404';
+include 'view/header.php'
+if ($page === 'home'){
+	include 'view/homepage.php'
+}
+include 'view/footer.php'
+
+?>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <title>SoProno</title>
-    <link rel="stylesheet" href="/view/css/style.css" />
-    <link rel="stylesheet" href="/view/css/home_page_style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="home_page_style.css" />
 </head>
 <body>
     
@@ -73,3 +94,6 @@ include('/view/footer.php')
 
 </body>
 </html>
+
+
+-->

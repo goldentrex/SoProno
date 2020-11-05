@@ -1,3 +1,0 @@
-SoProno
-Site displaying football data for the Euro 2022.
-Work in progress...
