@@ -1,3 +1,6 @@
+<?php session_start();?>
+
+
 <!DOCTYPE html>
 
 
@@ -28,6 +31,25 @@
 
         <input type="submit" value="Se connecter !" id="login">
     </form>
+
+    <?php 
+     include ('database.php');
+
+     if(isset($_POST['login'])){
+         extract($_POST);
+                 
+         $query = $bdd->prepare('SELECT * FROM users WHERE user_mail = :user_mail and password = :password');
+         $query->execute([
+             'user_mail'=> $user_mail,
+             'password' => $password
+            ]);
+         $result = $q->fetch();
+         }
+
+         if($result){
+             echo ('Vous êtes bien connecté !');
+         }
+    ?>
 
 
 
