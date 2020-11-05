@@ -62,7 +62,7 @@
 
 
 <footer>
-   <?php include('./view/footer.php')?>
+   <?php include('footer.php')?>
 </footer>
 
 </html>

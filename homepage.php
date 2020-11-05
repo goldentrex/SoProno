@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="view/css/home_page_style.css" />
 </head>
 <body>
-    <?php include '/view/header.php'?>
+    <?php include 'header.php'?>
     
     <section>
        <br/>
@@ -48,7 +48,7 @@
 
     </nextMatch>
     <footer>
-      <?php include '/view/footer.php'?>
+      <?php include 'footer.php'?>
     </footer>
 </body>
 </html>

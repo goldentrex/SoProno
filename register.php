@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="view/css/register.css" />
 </head>
 <body>
-    <?php include './view/header.php'?>
+    <?php include 'header.php'?>
     
     <div class="intro_account">
        Page d'inscription
@@ -82,7 +82,7 @@
     
 
     <footer>
-        <?php include './view/footer.php'?>
+        <?php include 'footer.php'?>
     </footer>
 </body>
 </html>

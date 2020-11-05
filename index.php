@@ -1,6 +1,3 @@
-<?php start_session(); 
-include 'database.php'?>
-
 
 
 <!DOCTYPE html>
@@ -13,19 +10,21 @@ include 'database.php'?>
 <body>
     
 <?php 
+include 'database.php';
+include 'header.php';
 
 
 $page = $_GET['page'] ?? '404';
-include '/view/header.php'
+
 if ($page === 'home'){
-	include 'view/homepage.php'
+	include 'homepage.php';
 }
 
 
 
 if(!isset($_GET['page'])){
     $page=' ';
-    include('/view/homepage.php');
+    include('homepage.php');
 }
 else{
     $page = $_GET['page'];
@@ -33,42 +32,43 @@ else{
 
 switch ($page) {
     case "home":
-        include('/view/homepage.php');
+        include('homepage.php');
         break;
     case "quizz":
-        include('/view/quizz.php');
+        include('quizz.php');
         break;
     case "quizz1":
-        include('/view/page_quizz1.php');
+        include('page_quizz1.php');
         break;
     case "quizz2":
-        include('/view/page_quizz2.php');
+        include('page_quizz2.php');
         break;
     case "results1":
-        include('/view/page_results1.php');
+        include('page_results1.php');
         break;
     case "results2":
-        include('/view/page_results2.php');
+        include('page_results2.php');
         break;
     case "login":
-        include('/view/login.php');
+        include('login.php');
         break;
     case("register"):
-        include('/view/register.php');
+        include('register.php');
         break;
     case "matchs":
-        include('/view/matchs.php');
+        include('matchs.php');
         break;
     case("prono"):
-        include('/view/prono.php');
+        include('prono.php');
         break;
-        
-    default:
-        include('/view/main.php');
-    break;
+
     
     }
-include('/view/footer.php')
+
+
+include('footer.php');
+
+
 ?>
 
 </body>
