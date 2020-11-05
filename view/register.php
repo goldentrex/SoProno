@@ -4,8 +4,8 @@
 <html>
 <head>
     <title>Inscription</title>
-    <link rel="styleshett" href="css/style.css"/>
-    <link rel="stylesheet" href="css/register.css" />
+    <link rel="styleshett" href="view/css/style.css"/>
+    <link rel="stylesheet" href="view/css/register.css" />
 </head>
 <body>
     <?php include 'header.php'?>
@@ -51,7 +51,9 @@
     </form>
     
 
-    <?php         
+         
+<!--     
+    Méthode pour remplir la bdd lors d'une inscription
     
     include ('database.php');
 
@@ -59,11 +61,9 @@
         if(isset($_POST['inscription'])){
         extract($_POST);
 
-
-    
         if($password == $password_confirmation){
             
-            $query = $bdd->prepare('INSERT INTO users(firstname,lastname,user_mail,birth_date,password) VALUES(:firstname, :lastname, :user_mail ,:birth_date,:password)');
+            $query = $db->prepare('INSERT INTO users(firstname,lastname,user_mail,birth_date,password) VALUES(:firstname, :lastname, :user_mail ,:birth_date,:password)');
             $query->execute([
                 'firstname' => $firstname,
                 'lastname' => $lastname,
@@ -77,7 +77,7 @@
             else {
                 echo ('vos mots de passe ne correspondent pas !');
             }
-        }?>
+        } -->
 
     
 

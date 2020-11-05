@@ -7,8 +7,8 @@
 <html>
 <head>
     <title>Connexion</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="view/css/style.css" />
+    <link rel="stylesheet" href="view/css/login.css" />
 </head>
 <body>
     <?php include 'header.php'?>
@@ -35,20 +35,26 @@
     <?php 
      include ('database.php');
 
-     if(isset($_POST['login'])){
-         extract($_POST);
-                 
-         $query = $bdd->prepare('SELECT * FROM users WHERE user_mail = :user_mail and password = :password');
-         $query->execute([
-             'user_mail'=> $user_mail,
-             'password' => $password
-            ]);
-         $result = $q->fetch();
-         }
+    //  if(isset($_POST['login'])){
+    //      extract($_POST);
 
-         if($result){
-             echo ('Vous êtes bien connecté !');
-         }
+    //      $db = dbConnection();
+            
+    //      $query = $db->prepare('SELECT * FROM users WHERE user_mail = :user_mail');
+    //      $query->execute([
+    //          'user_mail'=> $user_mail
+    //         ]);
+    //      $result = $query->fetch();
+
+    //      if($result && $password == ['password']){
+    //          echo ('vous êtes connecté');
+    //      }
+
+
+            
+        //  }
+
+        
     ?>
 
 

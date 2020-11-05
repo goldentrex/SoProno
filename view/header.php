@@ -1,5 +1,5 @@
 <header>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="view/css/style.css">
     <title> SoProno </title>
     <div id='header'>
         <h1 id="headerTitle">
