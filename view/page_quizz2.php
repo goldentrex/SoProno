@@ -13,7 +13,7 @@
     <strong> Bonjour, vous trouverez ici une description du quizz ..... </strong><br />
     
     <br />
-    <form method="post" action="page_results2.php">
+    <form method="post" action="./view/page_results2.php">
 
       <div>
        <label for="prefered_player">Quel est votre joueur préféré ? </label><br />
@@ -62,7 +62,7 @@
 
 
 <footer>
-   <?php include('footer.php')?>
+   <?php include('./view/footer.php')?>
 </footer>
 
 </html>

@@ -4,13 +4,13 @@
     <link rel="stylesheet" href="view/css/style.css" />
 </head>
 <body>
-    <?php include 'header.php'?>
+    <?php include './view/header.php'?>
     
     <section>
        Work in progress results1
     </section>
     <footer>
-        <?php include 'footer.php'?>
+        <?php include './view/footer.php'?>
     </footer>
 </body>
 </html>

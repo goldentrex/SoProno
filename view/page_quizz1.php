@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php include('header.php')?>
+<?php include('./view/header.php')?>
 
 <head>
     <meta charset="utf-8">
@@ -15,7 +15,7 @@
     <br />
     <hr>
 
-    <form method="post" action="page_results1.php">
+    <form method="post" action="./view/page_results1.php">
        
       <div>
          <div class="question">
@@ -92,7 +92,7 @@
 
 
 <footer>
-   <?php include('footer.php')?>
+   <?php include('./view/footer.php')?>
 </footer>
 
 </html>
