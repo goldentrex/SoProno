@@ -17,7 +17,7 @@ include ('database.php');
     <link rel="stylesheet" href="view/css/login.css" />
 </head>
 <body>
-    <?php include 'header.php'?>
+    <?php //include 'header.php'?>
 
 
     <div class="connexion">
@@ -107,7 +107,7 @@ include ('database.php');
 
 
     <footer>
-        <?php include 'footer.php'?>
+        <?php //include 'footer.php'?>
     </footer>
 </body>
 </html>

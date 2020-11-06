@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php include('header.php')?>
+<?php //include('header.php')?>
 
 <head>
     <meta charset="utf-8">
@@ -92,7 +92,7 @@
 
 
 <footer>
-   <?php include('footer.php')?>
+   <?php //include('footer.php')?>
 </footer>
 
 </html>

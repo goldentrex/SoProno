@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="view/css/style.css" />
 </head>
 <body>
-    <?php include 'header.php'?>
+    <?php //include 'header.php'?>
     
     <section>
        <strong>Vous souhaitez tester vos connaissance sur le football avant l'euro ? Nos quizz sont fait pour vous !</strong>  <br/><br/>
@@ -14,7 +14,7 @@
 
     </section>
     <footer>
-        <?php include 'footer.php'?>
+        <?php //include 'footer.php'?>
     </footer>
 </body>
 </html>
