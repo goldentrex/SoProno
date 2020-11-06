@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -27,7 +26,7 @@ if(!isset($_GET['page'])){
 else{
     $page = $_GET['page'];
 }
-
+var_dump($page) ;
 switch ($page) {
     case "home":
         include('homepage.php');
