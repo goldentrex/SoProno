@@ -4,14 +4,14 @@
 <html>
 <head>
     <title>Inscription</title>
-    <link rel="styleshett" href="view/css/style.css"/>
+    <link rel="stylesheet" href="view/css/style.css"/>
     <link rel="stylesheet" href="view/css/register.css" />
 </head>
 <body>
-    <?php //include 'header.php'?>
     
     <div class="intro_account">
-       Page d'inscription
+       Page d'inscription, déjà un compte ?
+       <p> <a href="index.php?page=login"> Connectez vous ici !</a> </p>
     </div>
 
     <form method="post">
@@ -79,10 +79,5 @@
             }
         } -->
 
-    
-
-    <footer>
-        <?php //include 'footer.php'?>
-    </footer>
 </body>
 </html>

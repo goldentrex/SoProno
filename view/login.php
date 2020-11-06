@@ -3,26 +3,19 @@
 
 <!DOCTYPE html>
 
-<section id="login">
-
-<?php 
-include ('database.php');
-// require ('checkUser.php');
-?>
-
 <html>
 <head>
     <title>Connexion</title>
     <link rel="stylesheet" href="view/css/style.css" />
-    <link rel="stylesheet" href="view/css/login.css" />
+    <link rel="stylesheet" href="view/css/register.css" />
 </head>
 <body>
     <?php //include 'header.php'?>
 
 
-    <div class="connexion">
+    <div class="intro_account">
        Page de connexion, pas de compte ?
-       <p href="register.php"> Créez votre compte ici ! </p>
+       <p><a href="index.php?page=register"> Inscrivez vous ici !</a> </p>
     </div>
 
     <?php if(isset($load_page['errMsg'])) echo 'Identifiant ou mot de passe non reconnus !';?>
@@ -30,12 +23,12 @@ include ('database.php');
     <form method="post" action="quizz.php">
         <p>
             <label for="name">Identifiant :</label><br />
-            <input class="box" type="mail" name="name" id="user_mail" required/>
+            <input type="mail" name="name" id="user_mail" required/>
         </p><br />
 
         <p> 
-            <label for="password">Mot de passe :</label>
-            <input class="box" type="password" name="password" id="user_password" required/>
+            <label for="password">Mot de passe :</label><br />
+            <input type="password" name="password" id="user_password" required/>
         </p><br />
 
         <input type="submit" value="Se connecter !" id="login">
@@ -47,22 +40,22 @@ include ('database.php');
 
     <?php
 
-    dbConnection();
-    $query = $db->prepare('SELECT user_mail, password FROM users WHERE user_mail=:user_mail');
-    $query->execute(array(
-        'user_mail'=>$user_mail
-    ));
-    $result = $query->fetch();
+    // dbConnection();
+    // $query = $db->prepare('SELECT user_mail, password FROM users WHERE user_mail=:user_mail');
+    // $query->execute(array(
+    //     'user_mail'=>$user_mail
+    // ));
+    // $result = $query->fetch();
 
-    if($_POST['password'] == $result['password']){
-        echo 'mot de passe incorrect';
-    }
-    else{
-        session_start();
-        $_SESSION['user_mail'] = $user_mail;
-        echo 'vous êtes maintenant connecté !';
-        //header('Location : quizz.php');
-    }
+    // if($_POST['password'] == $result['password']){
+    //     echo 'mot de passe incorrect';
+    // }
+    // else{
+    //     session_start();
+    //     $_SESSION['user_mail'] = $user_mail;
+    //     echo 'vous êtes maintenant connecté !';
+    //     //header('Location : quizz.php');
+    // }
 
     
 
@@ -103,11 +96,5 @@ include ('database.php');
         
     ?>
 
-
-
-
-    <footer>
-        <?php //include 'footer.php'?>
-    </footer>
 </body>
 </html>
