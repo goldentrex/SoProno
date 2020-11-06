@@ -18,7 +18,7 @@ function dbConnection(){
     return $db;
 }
 
-test
+test2
 
 // function getUserinformation($user_mail, $password){
 //     $db = dbConnection();
