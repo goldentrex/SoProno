@@ -11,7 +11,8 @@
     <?php include 'header.php'?>
     
     <div class="intro_account">
-       Page d'inscription
+       Page d'inscription, déja un compte ?
+       <p><a href="login.php"> Connectez vous !</a></p>
     </div>
 
     <form method="post">

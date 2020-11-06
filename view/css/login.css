@@ -20,23 +20,20 @@ body {
     padding-top: 10px;
 }
 
-form,
-input,
-label {
+form {
     font-weight: bold;
     font-family: sans-serif;
     text-align: justify;
     text-align: center;
     justify-content: center;
-    display: block;
-    box-sizing: border-box;
+    padding-bottom: 15px;
 }
 
-.box {
-    font-family: sans-serif;
+label,
+input {
+    display: flexbox;
     text-align: center;
-    justify-content: center;
-    display: block;
-    box-sizing: border-box;
-    display: flex;
+    width: 25%;
+    box-sizing: content-box;
+    margin-left: 15px;
 }

@@ -10,15 +10,34 @@ function dbConnection(){
     try{
         $db = new PDO("mysql:host=" . $db_host . ";dbname=" .$db_name, $db_user, $db_password);
         $db->setAttribute(PDO :: ATTR_ERRMODE, PDO :: ERRMODE_EXCEPTION);
+        echo('connection success');
 
     }catch(PDOException $errorMsg){
-        echo $errorMsg;
+        echo 'non connecté' ;
     }
-
     return $db;
 }
 
-test2
+
+
+function getUserinformation($user_mail,$password){
+
+    $db = dbConnection();
+ 
+    $query = $db->prepare('SELECT * FROM users WHERE user_mail=:user_mail');
+    $query->execute(array(
+        'user_mail'=>$user_mail,
+    ));
+    $userInformations = $query->fetchAll();
+    return $userInformations;
+    echo $userInformations ;
+}
+
+
+
+
+
+
 
 // function getUserinformation($user_mail, $password){
 //     $db = dbConnection();
@@ -36,35 +55,6 @@ test2
 //     $query->closeCursor();
 //     return $data;
 // }
-
-
-function getUserinformation(){
-    require ('login.php');
-
-    dbConnection();
-
-    $query = $db->prepare('SELECT user_mail, password FROM users WHERE user_mail=:user_mail');
-    $query->execute(array(
-        'user_mail'=>$user_mail
-    ));
-    $result = $query->fetch();
-
-    if($_POST['password'] == $result['password']){
-        echo 'mot de passe incorrect';
-    }
-    else{
-        session_start();
-        $_SESSION['user_mail'] = $user_mail;
-        echo 'vous êtes maintenant connecté !';
-        header('Location : quizz.php');
-    }
-}
-
-
-
-
-
-
 
 
 
