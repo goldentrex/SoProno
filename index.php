@@ -11,8 +11,6 @@
     
 <?php 
 include 'database.php';
-include 'header.php';
-
 
 $page = $_GET['page'] ?? '404';
 
@@ -61,8 +59,6 @@ switch ($page) {
     case("prono"):
         include('prono.php');
         break;
-
-    
     }
 
 
