@@ -2,6 +2,11 @@
 <?php session_start(); ?>
 
 <!DOCTYPE html>
+<?php 
+include './model/database.php';
+include './controller/checkUser.php';
+var_dump(isConnected());
+?>
 
 <html>
 <head>
@@ -20,7 +25,7 @@
 
     <?php if(isset($load_page['errMsg'])) echo 'Identifiant ou mot de passe non reconnus !';?>
 
-    <form method="post" action="quizz.php">
+    <form method="post">
         <p>
             <label for="name">Identifiant :</label><br />
             <input type="mail" name="name" id="user_mail" required/>

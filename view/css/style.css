@@ -80,7 +80,6 @@ body {
 
 .clelogin,
 .account {
-    display: flexbox;
     margin-left: 70%;
     margin-top: 2%;
     border-radius: 12px 0 12px 0;
