@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
-<?php include('header.php')?>
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./view/style.css">
     <title>Quizz1</title>
     <h1> fffffffff </h1>
 </head>
@@ -16,7 +15,7 @@
     <br />
     <hr>
 
-    <form method="post" action="page_results1.php">
+    <form method="post" action="index.php?page=page_results1.php">
 
       <div>
          <div class="question1">
@@ -103,7 +102,7 @@
 </body>
 
 <footer>
-   <?php include('footer.php')?>
+   
 </footer>
 
 </html>

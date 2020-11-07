@@ -16,7 +16,7 @@
 
 <?php
 
-include 'model/database.php';
+include 'database.php';
 $db = dbConnection();
 
 

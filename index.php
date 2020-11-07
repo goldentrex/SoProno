@@ -9,8 +9,8 @@ switch ($page) {
         include('view/homepage.php');
         break;
     case "quizz":
-        if($_SESSION['connecter']==1)
-        {include('view/quizz.php');}
+        // if($_SESSION['connecter']==1)
+        include('view/quizz.php');
         
         break;
     case "quizz1":
@@ -20,7 +20,7 @@ switch ($page) {
         include('view/page_quizz2.php');
         break;
     case "results1":
-        include('view/page_results1.php');
+        include('./controller/page_results1.php');
         break;
     case "results2":
         include('view/page_results2.php');
