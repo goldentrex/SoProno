@@ -1,4 +1,4 @@
-<?php 
+<?php session_start();
 
 $page = $_GET['page'] ?? '404';
 include './view/elements/header.php';
@@ -9,7 +9,9 @@ switch ($page) {
         include('view/homepage.php');
         break;
     case "quizz":
-        include('view/quizz.php');
+        if($_SESSION['connecter']==1)
+        {include('view/quizz.php');}
+        
         break;
     case "quizz1":
         include('view/page_quizz1.php');
