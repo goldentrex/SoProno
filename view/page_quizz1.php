@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <title>Quizz1</title>
+    <h1> fffffffff </h1>
 </head>
 
 <body>
