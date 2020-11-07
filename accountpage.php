@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Inscription</title>
+    <link rel="styleshett" href="style.css"/>
     <link rel="stylesheet" href="accountpage_style.css" />
 </head>
 <body>
@@ -13,7 +14,11 @@
        Page d'inscription
     </div>
 
-    <form method="post" >
+    <form method="post">
+        <p>
+            <label for="name">Votre nom :</label><br />
+            <input type="text" name="lastname" id="lastname" placeholder="Nom" required/>
+        </p><br />
 
 <form method="POST" action = "accountpage.php">
     <div>
@@ -22,17 +27,15 @@
             <input type="text" name="name" id="name"/>
         </div><br />
 
-        <div>
-         <div>
-            <label for="prenom">Votre prénom</label><br />
-            <input type="text" name="prenom" id="prenom"/>
-        </div><br />
+        <!-- <p> 
+            <label for="birth_date">Votre date de naissance :</label><br />
+            <input type="date" name="birth_date" id="birth_date" required/>
+        </p><br /> -->
 
-        <div>
-         <div>
-            <label for="mail">Votre adresse mail</label><br />
-            <input type="mail" name="mail_adress" id="mail"/>
-        </div><br />
+        <p> 
+            <label for="password">Mot de passe :</label><br />
+            <input type="password" name="password" id="password" placeholder="Mot de passe" required />
+        </p><br />
 
         <div>
             <label for="birth_date">Votre date de naissance :</label>
@@ -52,7 +55,9 @@
           <input type="submit" value ="S'inscrire" name ="submit"/>
         </div><br />
 
-    </div>
+    <?php 
+        if(isset($_POST['inscription'])){
+            extract($_POST);
 
 
     </form>
