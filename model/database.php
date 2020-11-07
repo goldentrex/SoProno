@@ -20,45 +20,45 @@ function dbConnection(){
 
 
 
-// function getUserinformation($user_mail, $password){
-//     $db = dbConnection();
+function getUserinformation($user_mail, $password){
+    $db = dbConnection();
     
-//     if(isset($_POST['login'])){
-//         if(!empty($user_mail) && !empty($password)){
-//             $query = $db->prepare("SELECT user_mail, password FROM users WHERE user_mail=:user_mail");
-//             $query->execute(array(
-//                 'user_mail'=> $user_mail
-//             ));
+    if(isset($_POST['login'])){
+        if(!empty($user_mail) && !empty($password)){
+            $query = $db->prepare("SELECT * FROM users WHERE user_mail=:user_mail");
+            $query->execute(array(
+                'user_mail'=> $user_mail
+            ));
 
-//             $data = $query->fetch(PDO::FETCH_ASSOC);
-//         }
-//     }
-//     $query->closeCursor();
-//     return $data;
-// }
-
-
-function getUserinformation(){
-    require ('login.php');
-
-    dbConnection();
-
-    $query = $db->prepare('SELECT user_mail, password FROM users WHERE user_mail=:user_mail');
-    $query->execute(array(
-        'user_mail'=>$user_mail
-    ));
-    $result = $query->fetch();
-
-    if($_POST['password'] == $result['password']){
-        echo 'mot de passe incorrect';
+            $data = $query->fetch(PDO::FETCH_ASSOC);
+        }
     }
-    else{
-        session_start();
-        $_SESSION['user_mail'] = $user_mail;
-        echo 'vous êtes maintenant connecté !';
-        header('Location : quizz.php');
-    }
+    $query->closeCursor();
+    return $data;
 }
+
+
+// function getUserinformation(){
+//     require ('login.php');
+
+//     dbConnection();
+
+//     $query = $db->prepare('SELECT user_mail, password FROM users WHERE user_mail=:user_mail');
+//     $query->execute(array(
+//         'user_mail'=>$user_mail
+//     ));
+//     $result = $query->fetch();
+
+//     if($_POST['password'] == $result['password']){
+//         echo 'mot de passe incorrect';
+//     }
+//     else{
+//         session_start();
+//         $_SESSION['user_mail'] = $user_mail;
+//         echo 'vous êtes maintenant connecté !';
+//         header('Location : quizz.php');
+//     }
+// }
 
 
 
