@@ -7,8 +7,8 @@
                 <img src="./img/soprono_logo.png" alt="SoProno">      
             </a>
 
-            <a class="cleLogin" href="index.php?page=login">Login</a>
-            <a class="account" href="index.php?page=register">Créer son compte</a>
+            <a class="cleLogin" href="index.php?page=login"> Login </a> <br/><br/>
+            <a class="account" href="index.php?page=register"> Créer son compte </a>
         
         </h1>
         <br/>

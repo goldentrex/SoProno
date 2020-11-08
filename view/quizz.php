@@ -9,8 +9,8 @@
     <section>
        <strong>Vous souhaitez tester vos connaissance sur le football avant l'euro ? Nos quizz sont fait pour vous !</strong>  <br/><br/>
 
-		<a class="link" href="./view/page_quizz1.php"> Quizz 1 </a><br/>
-        <a class="link" href="page_quizz2.php"> Quizz 2 </a><br/>
+		<a class="link" href="index.php?page=quizz1"> Quizz 1 </a><br/>
+        <a class="link" href="index.php?page=quizz2"> Quizz 2 </a><br/>
 
     </section>
     <footer>

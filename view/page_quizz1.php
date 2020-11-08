@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./view/style.css">
+    <link rel="stylesheet" href="/view/style.css">
     <title>Quizz1</title>
-    <h1> fffffffff </h1>
+    <h1> So Prono Quizz 1 </h1>
 </head>
 
 <body>
