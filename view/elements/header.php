@@ -5,11 +5,17 @@
         <h1 id="headerTitle">
             <a class="link" href="index.php?page=home">
                 <img src="./img/soprono_logo.png" alt="SoProno">      
-            </a>
-
-            <a class="cleLogin" href="index.php?page=login"> Login </a> <br/><br/>
-            <a class="account" href="index.php?page=register"> Créer son compte </a>
-        
+            </a>  
+            
+            <?php 
+            if(isConnected()==1){
+                echo ('<p><form method="post" action="index.php"><input type="submit" class="clelogin" value="déconnexion" name="deconnexion"></form></p><br>');
+            }else{
+                echo('<a class="cleLogin" href="index.php?page=login">Login</a><br><br>');
+            }
+            ?>
+            <a class="account" href="index.php?page=register">Créer son compte</a>
+            
         </h1>
         <br/>
 

@@ -12,7 +12,7 @@
        <p><a href="index.php?page=register"> Inscrivez vous ici !</a> </p>
     </div>
 
-    <form method="post" action="controller/checkUser.php">
+    <form method="post" action="index.php">
         <p>
             <label for="name">Identifiant :</label><br />
             <input type="mail" name="user_mail" id="user_mail" required/>

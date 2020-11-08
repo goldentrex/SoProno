@@ -1,4 +1,7 @@
-<?php session_start();
+<?php 
+session_start();
+
+include('controller/checkUser.php');
 
 $page = $_GET['page'] ?? '404';
 include './view/elements/header.php';
@@ -9,9 +12,12 @@ switch ($page) {
         include('view/homepage.php');
         break;
     case "quizz":
-        // if($_SESSION['connecter']==1)
-        include('view/quizz.php');
-        
+        if (isConnected()==1){
+            include('view/quizz.php');
+        }
+        else{
+            echo ('<p> Vous ne pouvez pas accéder aux quizz sans être connecté ! </p>');
+        }
         break;
     case "quizz1":
         include('view/page_quizz1.php');
@@ -39,12 +45,6 @@ switch ($page) {
         break;
     }
 
-
-
-
-
 include './view/elements/footer.php' ;
-
-
 
 ?>

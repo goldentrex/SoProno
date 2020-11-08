@@ -1,32 +1,58 @@
 <?php
 include('database.php');
 
-function isConnected() : bool {
-    return !empty($_SESSION['connected']);
+function userDisconnect(){
+    $_SESSION=array();
 }
 
-function userConnexion() {
- 
-    if(!empty($_POST["user_mail"]) && !empty($_POST["password"])){
-        $data = getUserinformation($_POST["user_mail"]);
 
-        //Comparaison des adresses :
-        if(isset($data)){
-            //si comparaison ok, comparaison des mdp
+function isConnected() {
+    if(isset($_SESSION["connected"])){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+function userConnexion() {
+    userDisconnect();
+    $data = getUserinformation($_POST["user_mail"]);
+    if($_POST["user_mail"]==$data[0]['user_mail']){
+        
+        if(isset($data)){            
             if($_POST['password'] == $data[0]['password']){
-                //si comparaison ok, connexion
-                $_SESSION["connecter"]=1;
-                header('Location: ../index.php?page=quizz ');
-                exit();
+                $_SESSION["connected"]=1;               
             }
-            //sinon connexion echoué
+                //sinon connexion echoué
             else{
-                echo 'connexion echouee - reessayer';
-            }
-            echo 'mail incorrect';
+                return ('Le mot de passe est incorrect');
+            }            
+        }   
+    }else{
+       return('Le mail est incorrect');
+    } 
+}
+
+
+if(isConnected()==0){
+    if(isset($_POST["user_mail"])){
+        $result=userConnexion();
+        echo($result);
+        if( userConnexion()=='Le mot de passe est incorrect'|| userConnexion()=='Le mail est incorrect'){
+            header('Location: ./index.php?page=login');
+            exit();
+        }else{
+            header('Location: ./index.php?page=home');
+            exit();
         }
     }
 }
-userConnexion();
+
+if(isset($_POST['deconnexion'])){
+    userDisconnect();
+    header('Location: ./index.php?page=login');
+}
+
+
 
 ?>

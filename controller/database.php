@@ -10,7 +10,7 @@ function dbConnection(){
     try{
         $db = new PDO("mysql:host=" . $db_host . ";dbname=" .$db_name, $db_user, $db_password);
         $db->setAttribute(PDO :: ATTR_ERRMODE, PDO :: ERRMODE_EXCEPTION);
-        echo 'bdd connecté !';
+        // echo 'bdd connecté !';
 
     }catch(PDOException $errorMsg){
         echo $errorMsg;
@@ -26,11 +26,35 @@ function getUserinformation($user_mail){
 
     $query = $db->prepare('SELECT * FROM users WHERE user_mail=:user_mail');
     $query->execute(array(
-        'user_mail'=>$user_mail,
+        'user_mail'=>$user_mail
     ));
     $userInformations = $query->fetchAll();
     return $userInformations;
 }
+
+
+
+
+// a finir pour étape suivante et inscription
+function setRegistration(){
+    $db = dbConnection();
+
+    $query = $db->prepare('INSERT INTO users ' );
+    $query->execute();
+    
+}
+// récupération des réponses
+function getGoodAnswers($idAnswers){
+    $db = dbConnection();
+
+    $query =$db->prepare('SELECT * FROM answers WHERE idAnswers=:id');
+    $query->execute(array(
+        'id'=>$idAnswers
+    ));
+    $goodAnswers = $query->fetchAll();
+    return $goodAnswers;
+}
+
 
 ?>
 
