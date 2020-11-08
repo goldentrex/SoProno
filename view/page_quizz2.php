@@ -15,47 +15,55 @@
     <br />
     <form method="post" action="./view/page_results2.php">
 
-      <div>
-       <label for="prefered_player">Quel est votre joueur préféré ? </label><br />
-       <input type="text" name="prefered_player" id="prefered_player"/>
+      <div><div class="question">
+       <label for="prefered_player">Quel est votre joueur préféré ? </label></div><br />
+       <div class="blocrep">
+       <input type="text" name="prefered_player" id="prefered_player"/></div>
       </div><br />
       
-      
-      <div>Quel club est le plus ancien d'Europe ?<br />
+      <div class="question">
+      <div>Quel club est le plus ancien d'Europe ?</div></div><br />
+      <div class="blocrep">
        <input type="radio" name="Real Madrid" id="club" value="Real Madrid" ><label for="Real Madrid">Real Madrid</label><br />
        <input type="radio" name="PSG" id="club" value="PSG" ><label for="PSG">PSG</label><br />
        <input type="radio" name="Manchester United" id="club" value="Manchester United" ><label for="Manchester United">Manchester United</label><br />
        <input type="radio" name="Juventus Turin" id="club" value="Juventus Turin" ><label for="Juventus Turin">Juventus Turin</label>
-      </div><br />
-
-      <div><label for="pays">Quel est le pays d'Europe qui a gagné le dernier Euro ?</label><br />
+      </div></div><br />
+      <div class="question">
+      <div><label for="pays">Quel est le pays d'Europe qui a gagné le dernier Euro ?</label></div></div><br />
+      <div class="blocrep">
        <select name="pays" id="pays">
            <option value="france">France</option>
            <option value="portugal">Portugal</option>
            <option value="espagne">Espagne</option>
-       </select>
+       </select></div>
       </div><br />
       
-      <div><label>Combien de fois la france a gagné l'Euro ?</label><br />
-         <input type="number" id_number=""/>
+      <div><div class="question"><label>Combien de fois la france a gagné l'Euro ?</label></div><br />
+      <div class="blocrep">
+         <input type="number" id_number=""/></div>
       </div><br />
-
-      <div> Quel est le joueur qui a marqué ... de buts pendant le dernier euro:<br />
+      <div class="question">
+      <div> Quel est le joueur qui a marqué ... de buts pendant le dernier euro:</div></div><br />
+      <div class="blocrep">
        <input type="checkbox" name="player1" id="player1" /> <label for="player1">Joueur 1</label><br />
        <input type="checkbox" name="player2" id="player2" /> <label for="player2">Joueur 2</label><br />
-       <input type="checkbox" name="player3" id="player3" /> <label for="player3">Joueur 3</label><br />
+       <input type="checkbox" name="player3" id="player3" /> <label for="player3">Joueur 3</label><br /></div>
       </div><br />
-
-      <div> Quel est le joueur qui a marqué ... de buts pendant le dernier euro:<br />
+      <div class="question">
+      <div> Quel est le joueur qui a marqué ... de buts pendant le dernier euro:</div></div><br /><div class="blocrep">
        <input type="checkbox" name="player1" id="player1" /> <label for="player1">Joueur 1</label><br />
        <input type="checkbox" name="player2" id="player2" /> <label for="player2">Joueur 2</label><br />
-       <input type="checkbox" name="player3" id="player3" /> <label for="player3">Joueur 3</label><br />
+       <input type="checkbox" name="player3" id="player3" /> <label for="player3">Joueur 3</label><br /></div>
     </div><br />
 
     
 
    </form>
-   <br /><input type="submit" value="Envoyer" /><br />
+   <br />
+   <div class="respbutton">
+   <input type="submit" value="Envoyer" />
+ </div><br />
 
     
 </body>

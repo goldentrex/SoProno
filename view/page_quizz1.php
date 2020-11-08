@@ -18,7 +18,8 @@
     <form method="post" action="index.php?page=page_results1.php">
 
       <div>
-         <div class="question1">
+        <div class="question">
+         <div class="question1"></div>
             <label for="prefered_player">Le nom du capitaine du Portugal ? </label><br />
          </div><br />
                <div class="blocrep">
@@ -29,7 +30,9 @@
       <hr>
 
 
-      <div><div class="question2">Quel club est le plus ancien d'Europe ?</div><br />
+      <div><div class="question">
+        <div class="question2">Quel club est le plus ancien d'Europe ?</div></div>
+        <br />
          <div class="blocrep">
             <input type="radio" name="answerQ2[]" id="club" value="Real Madrid" ><label for="Real Madrid">Real Madrid</label><br />
             <input type="radio" name="answerQ2[]" id="club" value="PSG" ><label for="PSG">PSG</label><br />
@@ -41,7 +44,9 @@
 
       <hr>
 
-      <div><label for="pays"><div class="question3">Quel est le pays d'Europe qui a gagné le dernier Euro ?</div></label><br />
+      <div><label for="pays"><div class="question">
+        <div class="question3">Quel est le pays d'Europe qui a gagné le dernier Euro ?</div></div>
+      </label><br />
          <div class="blocrep">
             <select name="answerQ3" id="pays">
                <option value="France">France</option>
@@ -54,7 +59,9 @@
       <hr>
 
 
-      <div><div class="question4"><label>Combien de fois la France a t'elle remporté l'Euro</div></label><br />
+      <div><div class="question">
+        <div class="question4"></div>
+          <label>Combien de fois la France a t'elle remporté l'Euro</div></label><br />
          <div class ="blocrep">
             <input type="number" name ="answerQ4"/>s
          </div>
@@ -62,7 +69,7 @@
 
       <hr>
 
-      <div><div class ="question5"> Quel pays a remporté l'Euro en 2004 ?</div><br />
+      <div><div class="question"><div class ="question5"> Quel pays a remporté l'Euro en 2004 ?</div></div><br />
          <div class="blocrep">
            <label>
             <input type="radio" name="answerQ5[]" value="Allemagne" />Allemagne &nbsp;&nbsp;&nbsp;<br />
@@ -78,7 +85,7 @@
 
       <hr>
 
-      <div><div class="question6"> Quel est le joueur qui a marqué le but assasin en finale du dernier Euro:</div><br />
+      <div><div class="question"><div class="question6"> Quel est le joueur qui a marqué le but assasin en finale du dernier Euro:</div></div><br />
          <div class="blocrep">
            <label>
               <input type="radio" name="answerQ6[]" value ="Eder"/>Eder &nbsp;&nbsp;&nbsp;<br />
