@@ -1,20 +1,15 @@
 <html>
 <head>
     <title>SoProno</title>
+    <link rel="stylesheet" href="view/css/register.css" />
     <link rel="stylesheet" href="view/css/style.css" />
 </head>
 <body>
-    <?php //include 'header.php'?>
-    
-    <section>
-       <strong>Vous souhaitez tester vos connaissance sur le football avant l'euro ? Nos quizz sont fait pour vous !</strong>  <br/><br/>
+ 
+    <p class="intro_account">Merci de votre connexion ! Voici les quizz :</p>  <br/><br/>
 
-		<a class="link" href="index.php?page=quizz1"> Quizz 1 </a><br/>
-        <a class="link" href="index.php?page=quizz2"> Quizz 2 </a><br/>
+	<p class="quizzquestion"><a href="index.php?page=quizz1"> Quizz culture</a></p><br/>
+    <!-- <a class="link" href="index.php?page=quizz2"> Quizz 2 </a><br/> -->
 
-    </section>
-    <footer>
-        <?php //include 'footer.php'?>
-    </footer>
 </body>
 </html>

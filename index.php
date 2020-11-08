@@ -7,6 +7,9 @@ $page = $_GET['page'] ?? '404';
 include './view/elements/header.php';
 
 
+$errorMsg = "";
+
+
 switch ($page) {
     case "home":
         include('view/homepage.php');
@@ -16,7 +19,8 @@ switch ($page) {
             include('view/quizz.php');
         }
         else{
-            echo ('<p> Vous ne pouvez pas accéder aux quizz sans être connecté ! </p>');
+            $errorMsg .= '<a class="intro_account" href="'."index.php?page=login".'">'."Veuillez vous connecter pour accéder aux questions".'</a>';
+            echo $errorMsg;
         }
         break;
     case "quizz1":

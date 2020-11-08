@@ -4,13 +4,14 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/view/style.css">
+    <link rel="stylesheet" href="/view/style.css">
     <title>Quizz1</title>
-    <h1> So Prono Quizz 1 </h1>
+    <p class="intro_account"> Bienvenue sur la page de quizz ! </p>
 </head>
 
 <body>
 
-    <p class = "introduction"> Bonjour, vous trouverez ici un quizz concernant l'euro précédent. Il n'y a pas de meilleur préparation pour le prochain ! </p><br />
+    <p class = "introduction"> Bonjour, vous trouverez ici un quizz sur le foot !</p><br />
 
     <br />
     <hr>
@@ -107,9 +108,5 @@
    </form>
 
 </body>
-
-<footer>
-   
-</footer>
 
 </html>
