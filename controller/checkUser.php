@@ -14,6 +14,32 @@ function isConnected() {
         return 0;
     }
 }
+
+function userRegistration(){
+    
+    if(
+    isset($_POST['lastname']) &&
+    isset($_POST['firstname']) &&
+    isset($_POST['user_mail']) &&
+    isset($_POST['birth_date']) &&
+    isset($_POST['password']) &&
+    isset($_POST['password2'])){
+        if($_POST['password']==$_POST['password2']){
+            setRegistration($_POST['lastname'],$_POST['firstname'],$_POST['user_mail'],$_POST['birth_date'],$_POST['password']);
+            header('Location : ./index.php?page=login');
+            exit();
+        }
+        else{
+            echo 'les mots de passe ne correspondent pas';
+        }
+    }
+    
+
+}
+
+
+
+
 function userConnexion() {
     userDisconnect();
     $data = getUserinformation($_POST["user_mail"]);
@@ -52,6 +78,12 @@ if(isset($_POST['deconnexion'])){
     userDisconnect();
     header('Location: ./index.php?page=login');
 }
+
+if(isset($_POST['inscription'])){
+    userRegistration();
+}
+
+
 
 
 

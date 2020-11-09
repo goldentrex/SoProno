@@ -32,17 +32,23 @@ function getUserinformation($user_mail){
     return $userInformations;
 }
 
-
-
-
 // a finir pour étape suivante et inscription
-function setRegistration(){
+function setRegistration($lastname, $firstname, $user_mail, $birth_date, $password){
     $db = dbConnection();
 
-    $query = $db->prepare('INSERT INTO users ' );
-    $query->execute();
-    
+    $query = $db->prepare('INSERT INTO users( lastname, firstname, user_mail, birth_date, password) VALUES (:lastname, :firstname, :user_mail, :birth_date, :password' );
+    $query->execute(array(
+        'lastname' => $lastname,
+        'firstname' => $firstname,
+        'user_mail' => $user_mail,
+        'bith_date' => $birth_date,
+        'password' => $password
+    ));
+
 }
+
+
+
 // récupération des réponses
 function getGoodAnswers($idAnswers){
     $db = dbConnection();

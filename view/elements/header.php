@@ -7,7 +7,9 @@
                 <img src="./img/soprono_logo.png" alt="SoProno">      
             </a>  
             
-            <?php 
+        </h1>
+        
+        <?php 
             if(isConnected()==1){
                 echo ('<p><form method="post" action="index.php"><input type="submit" class="clelogin" value="déconnexion" name="deconnexion"></form></p><br>');
             }else{
@@ -16,7 +18,6 @@
             ?>
             <a class="account" href="index.php?page=register">Créer son compte</a>
             
-        </h1>
         <br/>
 
         <a class="link" href="index.php?page=home"> Home Page </a>
