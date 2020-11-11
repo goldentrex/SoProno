@@ -34,11 +34,7 @@ function userRegistration(){
         }
     }
     
-
 }
-
-
-
 
 function userConnexion() {
     userDisconnect();
@@ -82,9 +78,5 @@ if(isset($_POST['deconnexion'])){
 if(isset($_POST['inscription'])){
     userRegistration();
 }
-
-
-
-
 
 ?>
