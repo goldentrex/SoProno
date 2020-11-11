@@ -1,6 +1,55 @@
 <?php
 include('database.php');
 
+
+function isRegistered(){
+
+}
+
+
+function userRegistration(){
+    //if(isset($_POST['inscription'])){
+        if(
+        isset($_POST['lastname']) &&
+        isset($_POST['firstname']) &&
+        isset($_POST['user_mail']) &&
+        isset($_POST['birth_date']) &&
+        isset($_POST['password']) &&
+        isset($_POST['password_confirmation'])){
+            if($_POST['password']==$_POST['password_confirmation']){
+                //test hashage, si fonctionnel : modif de la fonction de connexion avec password_verify
+// ------------------------------ Fonction de hashage : source : manuel php : https://www.php.net/manual/fr/function.password-hash.php ------------------------------------------------------------
+                $hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
+                $registercheck = setRegistration($_POST['lastname'],$_POST['firstname'],$_POST['user_mail'],$_POST['birth_date'],$hash);
+                header('Location : ./index.php?page=login');
+                exit();
+            }
+            else{
+                return('les mots de passe ne correspondent pas');
+            }
+           
+        }
+        else{
+            return('informations érronées');
+        }
+    //} 
+}
+
+
+// Vérification pour l'inscription
+
+if(isset($_POST['inscription'])){
+    $userRegistration = userRegistration();
+    if($userRegistration=="les mots de passe ne correspondent pas" ||$userRegistration=="informations érronées"){
+        header('Location: ./index.php?page=register');
+    } 
+    else {
+        header('Location: ./index.php?page=home');
+    }
+   
+}
+
+
 function userDisconnect(){
     $_SESSION=array();
 }
@@ -15,34 +64,13 @@ function isConnected() {
     }
 }
 
-function userRegistration(){
-    
-    if(
-    isset($_POST['lastname']) &&
-    isset($_POST['firstname']) &&
-    isset($_POST['user_mail']) &&
-    isset($_POST['birth_date']) &&
-    isset($_POST['password']) &&
-    isset($_POST['password2'])){
-        if($_POST['password']==$_POST['password2']){
-            setRegistration($_POST['lastname'],$_POST['firstname'],$_POST['user_mail'],$_POST['birth_date'],$_POST['password']);
-            header('Location : ./index.php?page=login');
-            exit();
-        }
-        else{
-            echo 'les mots de passe ne correspondent pas';
-        }
-    }
-    
-}
-
 function userConnexion() {
     userDisconnect();
     $data = getUserinformation($_POST["user_mail"]);
     if($_POST["user_mail"]==$data[0]['user_mail']){
         
         if(isset($data)){            
-            if($_POST['password'] == $data[0]['password']){
+            if (password_verify($_POST['password'],$data[0]['password'])){
                 $_SESSION["connected"]=1;               
             }
                 //sinon connexion echoué
@@ -55,7 +83,7 @@ function userConnexion() {
     } 
 }
 
-
+// Vérification de connexion -- redirection si erreur
 if(isConnected()==0){
     if(isset($_POST["user_mail"])){
         $result=userConnexion();
@@ -70,13 +98,17 @@ if(isConnected()==0){
     }
 }
 
+// Vérification pour la déconnexion
 if(isset($_POST['deconnexion'])){
     userDisconnect();
     header('Location: ./index.php?page=login');
 }
 
-if(isset($_POST['inscription'])){
-    userRegistration();
-}
+
+
+
+
+
+
 
 ?>

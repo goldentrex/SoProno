@@ -33,33 +33,35 @@ function getUserinformation($user_mail){
 }
 
 // a finir pour étape suivante et inscription
-function setRegistration($lastname, $firstname, $user_mail, $birth_date, $password){
+function setRegistration($firstname, $lastname, $user_mail, $birth_date, $hash){
+   
     $db = dbConnection();
 
-    $query = $db->prepare('INSERT INTO users( lastname, firstname, user_mail, birth_date, password) VALUES (:lastname, :firstname, :user_mail, :birth_date, :password' );
+    $query = $db->prepare("INSERT INTO users(firstname, lastname, user_mail, birth_date, password) VALUES (:firstname, :lastname, :user_mail, :birth_date, :password)");
     $query->execute(array(
-        'lastname' => $lastname,
         'firstname' => $firstname,
+        'lastname' => $lastname,
         'user_mail' => $user_mail,
-        'bith_date' => $birth_date,
-        'password' => $password
+        'birth_date' => $birth_date,
+        'password' => $hash 
     ));
+    
 
 }
 
 
 
-// récupération des réponses
-function getGoodAnswers($idAnswers){
-    $db = dbConnection();
+// // récupération des réponses
+// function getGoodAnswers($idAnswers){
+//     $db = dbConnection();
 
-    $query =$db->prepare('SELECT * FROM answers WHERE idAnswers=:id');
-    $query->execute(array(
-        'id'=>$idAnswers
-    ));
-    $goodAnswers = $query->fetchAll();
-    return $goodAnswers;
-}
+//     $query =$db->prepare('SELECT * FROM answers WHERE idAnswers=:id');
+//     $query->execute(array(
+//         'id'=>$idAnswers
+//     ));
+//     $goodAnswers = $query->fetchAll();
+//     return $goodAnswers;
+// }
 
 
 ?>
