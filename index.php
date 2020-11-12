@@ -19,21 +19,15 @@ switch ($page) {
             include('view/quizz.php');
         }
         else{
-            $errorMsg .= '<a class="intro_account" href="'."index.php?page=login".'">'."Veuillez vous connecter pour accéder aux questions".'</a>';
+            $errorMsg .= '<a href="'."index.php?page=login".'">'."Veuillez vous connecter pour accéder aux questions".'</a>';
             echo $errorMsg;
         }
         break;
     case "quizz1":
         include('view/page_quizz1.php');
         break;
-    case "quizz2":
-        include('view/page_quizz2.php');
-        break;
     case "results1":
-        include('./controller/page_results1.php');
-        break;
-    case "results2":
-        include('view/page_results2.php');
+        include('./controller/page_results.php');
         break;
     case "login":
         include('view/login.php');

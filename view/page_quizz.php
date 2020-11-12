@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="/view/style.css">
     <link rel="stylesheet" href="/view/style.css">
-    <title>Quizz1</title>
+    <title>Quizz</title>
     <p class="intro_account"> Bienvenue sur la page de quizz ! </p>
 </head>
 

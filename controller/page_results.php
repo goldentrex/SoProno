@@ -20,7 +20,6 @@ include 'database.php';
 $db = dbConnection();
 
 
-
 $Score =0;
 // getAnswer1 :
 $answerQ1 = $_POST['capitainePortugal'];

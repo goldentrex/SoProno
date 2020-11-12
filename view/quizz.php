@@ -8,8 +8,8 @@
  
     <p class="intro_account">Merci de votre connexion ! Voici les quizz :</p>  <br/><br/>
 
-	<p class="quizzquestion"><a href="index.php?page=quizz1"> Quizz culture</a></p><br/>
-    <!-- <a class="link" href="index.php?page=quizz2"> Quizz 2 </a><br/> -->
+	<p class="quizzquestion"><a href="index.php?page=quizz1">Accéder à la page de quizz</a></p><br/>
+    
 
 </body>
 </html>
