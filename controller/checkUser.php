@@ -8,31 +8,30 @@ function isRegistered(){
 
 
 function userRegistration(){
-    //if(isset($_POST['inscription'])){
-        if(
-        isset($_POST['lastname']) &&
-        isset($_POST['firstname']) &&
-        isset($_POST['user_mail']) &&
-        isset($_POST['birth_date']) &&
-        isset($_POST['password']) &&
-        isset($_POST['password_confirmation'])){
-            if($_POST['password']==$_POST['password_confirmation']){
-                //test hashage, si fonctionnel : modif de la fonction de connexion avec password_verify
-// ------------------------------ Fonction de hashage : source : manuel php : https://www.php.net/manual/fr/function.password-hash.php ------------------------------------------------------------
-                $hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
-                $registercheck = setRegistration($_POST['lastname'],$_POST['firstname'],$_POST['user_mail'],$_POST['birth_date'],$hash);
-                header('Location : ./index.php?page=login');
-                exit();
-            }
-            else{
-                return('les mots de passe ne correspondent pas');
-            }
-           
+    
+    if(
+    isset($_POST['lastname']) &&
+    isset($_POST['firstname']) &&
+    isset($_POST['user_mail']) &&
+    isset($_POST['birth_date']) &&
+    isset($_POST['password']) &&
+    isset($_POST['password_confirmation'])){
+        if($_POST['password']==$_POST['password_confirmation']){
+
+// ------------------------ Fonction de hashage : source : manuel php : https://www.php.net/manual/fr/function.password-hash.php ------------------------
+            $hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
+            $registercheck = setRegistration($_POST['lastname'],$_POST['firstname'],$_POST['user_mail'],$_POST['birth_date'],$hash);
+            
         }
         else{
-            return('informations érronées');
+            return('les mots de passe ne correspondent pas');
         }
-    //} 
+           
+    }
+    else{
+        return('informations érronées');
+    }
+ 
 }
 
 
@@ -40,7 +39,7 @@ function userRegistration(){
 
 if(isset($_POST['inscription'])){
     $userRegistration = userRegistration();
-    if($userRegistration=="les mots de passe ne correspondent pas" ||$userRegistration=="informations érronées"){
+    if($userRegistration=="les mots de passe ne correspondent pas" || $userRegistration=="informations érronées"){
         header('Location: ./index.php?page=register');
     } 
     else {
@@ -48,7 +47,6 @@ if(isset($_POST['inscription'])){
     }
    
 }
-
 
 function userDisconnect(){
     $_SESSION=array();

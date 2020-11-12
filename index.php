@@ -50,5 +50,4 @@ switch ($page) {
     }
 
 include './view/elements/footer.php' ;
-
 ?>

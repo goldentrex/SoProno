@@ -49,20 +49,17 @@ function setRegistration($firstname, $lastname, $user_mail, $birth_date, $hash){
 
 }
 
+// récupération des réponses
+function getGoodAnswers($idAnswers){
+    $db = dbConnection();
 
-
-// // récupération des réponses
-// function getGoodAnswers($idAnswers){
-//     $db = dbConnection();
-
-//     $query =$db->prepare('SELECT * FROM answers WHERE idAnswers=:id');
-//     $query->execute(array(
-//         'id'=>$idAnswers
-//     ));
-//     $goodAnswers = $query->fetchAll();
-//     return $goodAnswers;
-// }
-
+    $query =$db->prepare('SELECT * FROM answers WHERE idAnswers=:id');
+    $query->execute(array(
+        'id'=>$idAnswers
+    ));
+    $goodAnswers = $query->fetchAll();
+    return $goodAnswers;
+}
 
 ?>
 
