@@ -16,7 +16,7 @@
     <br />
     <hr>
 
-    <form method="post" action="index.php?page=page_results1.php">
+    <form method="post" action="index.php?page=check_answer.php">
 
       <div>
         <div class="question">

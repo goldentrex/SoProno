@@ -1,6 +1,13 @@
 <?php 
 session_start();
 
+
+include('controller/database.php');
+
+
+$db = dbConnection();
+
+
 include('controller/checkUser.php');
 
 $page = $_GET['page'] ?? '404';
@@ -30,7 +37,7 @@ switch ($page) {
         include('view/page_quizz2.php');
         break;
     case "results1":
-        include('./controller/page_results1.php');
+        include('controller/check_answer.php');
         break;
     case "results2":
         include('view/page_results2.php');
