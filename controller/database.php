@@ -5,7 +5,7 @@ function dbConnection(){
     $db_host='localhost';
     $db_user='root';
     $db_name ='soprono';
-    $db_password = '';
+    $db_password = 'root';
 
     try{
         $db = new PDO("mysql:host=" . $db_host . ";dbname=" .$db_name, $db_user, $db_password);
@@ -18,7 +18,6 @@ function dbConnection(){
 
     return $db;
 }
-
 
 function getUserinformation($user_mail){
 
@@ -33,21 +32,21 @@ function getUserinformation($user_mail){
 }
 
 // a finir pour étape suivante et inscription
-function setRegistration($lastname, $firstname, $user_mail, $birth_date, $password){
+function setRegistration($firstname, $lastname, $user_mail, $birth_date, $hash){
+   
     $db = dbConnection();
 
-    $query = $db->prepare('INSERT INTO users( lastname, firstname, user_mail, birth_date, password) VALUES (:lastname, :firstname, :user_mail, :birth_date, :password' );
+    $query = $db->prepare("INSERT INTO users(firstname, lastname, user_mail, birth_date, password) VALUES (:firstname, :lastname, :user_mail, :birth_date, :password)");
     $query->execute(array(
-        'lastname' => $lastname,
         'firstname' => $firstname,
+        'lastname' => $lastname,
         'user_mail' => $user_mail,
-        'bith_date' => $birth_date,
-        'password' => $password
+        'birth_date' => $birth_date,
+        'password' => $hash 
     ));
+    
 
 }
-
-
 
 // récupération des réponses
 function getGoodAnswers($idAnswers){
@@ -60,7 +59,6 @@ function getGoodAnswers($idAnswers){
     $goodAnswers = $query->fetchAll();
     return $goodAnswers;
 }
-
 
 ?>
 
