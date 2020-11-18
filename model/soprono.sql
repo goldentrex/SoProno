@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3308
--- Generation Time: Nov 18, 2020 at 04:50 PM
+-- Generation Time: Nov 18, 2020 at 05:30 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -21,40 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `soprono`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `answer`
---
-
-CREATE TABLE `answer` (
-  `answer_id` int(11) NOT NULL,
-  `answer_text` varchar(255) NOT NULL,
-  `is_valid_answer` tinyint(1) NOT NULL,
-  `answer_question_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `answer`
---
-
-INSERT INTO `answer` (`answer_id`, `answer_text`, `is_valid_answer`, `answer_question_id`) VALUES
-(1, 'Ronaldo', 1, 1),
-(2, 'Real Madrid', 1, 2),
-(3, 'PSG', 0, 2),
-(4, 'Manchester United', 0, 2),
-(5, 'Juventus', 0, 2),
-(6, 'France', 0, 3),
-(7, 'Portugal', 1, 3),
-(8, 'Espagne', 0, 3),
-(9, '2', 1, 4),
-(10, 'Allemagne', 0, 5),
-(11, 'Grèce', 1, 5),
-(12, 'Italie', 0, 5),
-(13, 'Eder', 1, 6),
-(14, 'Hazard', 0, 6),
-(15, 'Ronaldo', 0, 6);
 
 -- --------------------------------------------------------
 
@@ -119,12 +85,6 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `answer`
---
-ALTER TABLE `answer`
-  ADD PRIMARY KEY (`answer_id`);
-
---
 -- Indexes for table `question`
 --
 ALTER TABLE `question`
@@ -146,12 +106,6 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `answer`
---
-ALTER TABLE `answer`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `question`
