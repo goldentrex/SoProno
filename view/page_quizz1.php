@@ -89,12 +89,12 @@
       <div><div class="question"><div class="question6"> Quel est le joueur qui a marqué le but assasin en finale du dernier Euro:</div></div><br />
          <div class="blocrep">
            <label>
-              <input type="radio" name="answerQ6[]" value ="Eder"/>Eder &nbsp;&nbsp;&nbsp;<br />
+              <input type="radio" name="answerQ6[]" value ="Eder"/>Eder<br />
           </label>
           <label>
-            <input type="radio" name="answerQ6[]" value ="Hazard"/>Hazard &nbsp;&nbsp;&nbsp;<br />
+            <input type="radio" name="answerQ6[]" value ="Hazard"/>Hazard<br />
           </label>
-            <input type="radio" name="answerQ6[]"value="Ronaldo"/>Ronaldo &nbsp;&nbsp;&nbsp;<br />
+            <input type="radio" name="answerQ6[]"value="Ronaldo"/>Ronaldo;<br />
           </label>
          </div>
       </div><br />
