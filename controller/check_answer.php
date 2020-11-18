@@ -1,14 +1,16 @@
 <?php
+
+//function Compare()
+
 if(isset($_POST['Voir vos résultats !'])){
-  echo 'test';
+  $test = getAnswers();
+  var_dump($test);
 }
-$test =  getUserinformation('johnny.hall@gmail.com');
-var_dump($test);
 
 
-echo 'test';
-getAnswers($id);
-var_dump($answers);
+
+
+
 
 ?>
 

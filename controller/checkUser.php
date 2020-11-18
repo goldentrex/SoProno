@@ -1,7 +1,5 @@
 <?php
 
-
-
 function isRegistered(){
 
 }
@@ -25,7 +23,6 @@ function userRegistration(){
         else{
             return('les mots de passe ne correspondent pas');
         }
-        
     }
     else{
         return('informations érronées');
