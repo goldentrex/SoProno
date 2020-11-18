@@ -48,6 +48,8 @@ function setRegistration($firstname, $lastname, $user_mail, $birth_date, $hash){
 
 }
 
+
+
 // récupération des réponses
 function getGoodAnswers($idAnswers){
     $db = dbConnection();
