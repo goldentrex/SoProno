@@ -48,15 +48,13 @@ function setRegistration($firstname, $lastname, $user_mail, $birth_date, $hash){
 
 }
 
-
-
 // récupération des réponses
-function getGoodAnswers($idAnswers){
+function getAnswers($id){
     $db = dbConnection();
 
     $query =$db->prepare('SELECT * FROM answers WHERE idAnswers=:id');
     $query->execute(array(
-        'id'=>$idAnswers
+        'id'=>$id
     ));
     $goodAnswers = $query->fetchAll();
     return $goodAnswers;

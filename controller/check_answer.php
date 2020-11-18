@@ -1,6 +1,15 @@
-
-
 <?php
+
+$answers = getAnswers($id);
+var_dump($answers);
+
+?>
+
+
+
+<!-- 
+
+  function Compare($id){
   $Score = 0;
   // getAnswer1 :
   $answerQ1 = $_POST['capitainePortugal'];
@@ -71,4 +80,4 @@
     {
     $score++;
     }
-?>
+?> -->

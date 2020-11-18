@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3308
--- Generation Time: Nov 18, 2020 at 05:30 PM
--- Server version: 5.7.24
--- PHP Version: 7.4.1
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  mer. 18 nov. 2020 à 20:56
+-- Version du serveur :  8.0.18
+-- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,24 +19,62 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `soprono`
+-- Base de données :  `soprono`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `question`
+-- Structure de la table `answer`
 --
 
-CREATE TABLE `question` (
-  `question_id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `answer`;
+CREATE TABLE IF NOT EXISTS `answer` (
+  `answer_id` int(11) NOT NULL AUTO_INCREMENT,
+  `answer_text` varchar(255) NOT NULL,
+  `is_valid_answer` tinyint(1) NOT NULL,
+  `answer_question_id` int(11) NOT NULL,
+  PRIMARY KEY (`answer_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `answer`
+--
+
+INSERT INTO `answer` (`answer_id`, `answer_text`, `is_valid_answer`, `answer_question_id`) VALUES
+(1, 'Ronaldo', 1, 1),
+(2, 'Real Madrid', 1, 2),
+(3, 'PSG', 0, 2),
+(4, 'Manchester United', 0, 2),
+(5, 'Juventus', 0, 2),
+(6, 'France', 0, 3),
+(7, 'Portugal', 1, 3),
+(8, 'Espagne', 0, 3),
+(9, '2', 1, 4),
+(10, 'Allemagne', 0, 5),
+(11, 'Grèce', 1, 5),
+(12, 'Italie', 0, 5),
+(13, 'Eder', 1, 6),
+(14, 'Hazard', 0, 6),
+(15, 'Ronaldo', 0, 6);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `question`
+--
+
+DROP TABLE IF EXISTS `question`;
+CREATE TABLE IF NOT EXISTS `question` (
+  `question_id` int(11) NOT NULL AUTO_INCREMENT,
   `question_title` varchar(255) NOT NULL,
   `question_quizz_id` int(11) NOT NULL,
-  `question_input_type` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `question_input_type` varchar(255) NOT NULL,
+  PRIMARY KEY (`question_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `question`
+-- Déchargement des données de la table `question`
 --
 
 INSERT INTO `question` (`question_id`, `question_title`, `question_quizz_id`, `question_input_type`) VALUES
@@ -50,16 +88,18 @@ INSERT INTO `question` (`question_id`, `question_title`, `question_quizz_id`, `q
 -- --------------------------------------------------------
 
 --
--- Table structure for table `quizz`
+-- Structure de la table `quizz`
 --
 
-CREATE TABLE `quizz` (
-  `quizz_id` int(11) NOT NULL,
-  `quizz_name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `quizz`;
+CREATE TABLE IF NOT EXISTS `quizz` (
+  `quizz_id` int(11) NOT NULL AUTO_INCREMENT,
+  `quizz_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`quizz_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `quizz`
+-- Déchargement des données de la table `quizz`
 --
 
 INSERT INTO `quizz` (`quizz_id`, `quizz_name`) VALUES
@@ -68,62 +108,28 @@ INSERT INTO `quizz` (`quizz_id`, `quizz_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `lastname` varchar(255) NOT NULL,
   `firstname` varchar(255) NOT NULL,
   `user_mail` varchar(255) NOT NULL,
   `birth_date` date NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_mail` (`user_mail`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
--- Indexes for dumped tables
+-- Déchargement des données de la table `users`
 --
 
---
--- Indexes for table `question`
---
-ALTER TABLE `question`
-  ADD PRIMARY KEY (`question_id`);
-
---
--- Indexes for table `quizz`
---
-ALTER TABLE `quizz`
-  ADD PRIMARY KEY (`quizz_id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `user_mail` (`user_mail`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `question`
---
-ALTER TABLE `question`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT for table `quizz`
---
-ALTER TABLE `quizz`
-  MODIFY `quizz_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+INSERT INTO `users` (`id`, `lastname`, `firstname`, `user_mail`, `birth_date`, `password`) VALUES
+(1, 'johnny', 'hall', 'johnny.hall@gmail.com', '2020-11-28', '$2y$10$TyzRtefZPyASwPWRIrhKmOQuwl8FmxEjT0GPCYbGpC0ZVQk7Fu7tG'),
+(2, 'james', 'bond', 'jamesbond@007.com', '2020-11-04', '$2y$10$poWAT385zURtHCC7.uuUU.pJJwdfb026mU6bNurEW33E4nOB4ZNGK');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
