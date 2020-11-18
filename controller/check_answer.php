@@ -1,6 +1,13 @@
 <?php
+if(isset($_POST['Voir vos résultats !'])){
+  echo 'test';
+}
+$test =  getUserinformation('johnny.hall@gmail.com');
+var_dump($test);
 
-$answers = getAnswers($id);
+
+echo 'test';
+getAnswers($id);
 var_dump($answers);
 
 ?>
