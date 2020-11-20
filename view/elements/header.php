@@ -11,7 +11,7 @@
         
         <?php 
             if(isConnected()==1){
-                echo ('<p><form method="post" action="index.php"><input type="submit" class="clelogin" value="déconnexion" name="deconnexion"></form></p><br>');
+                echo ('<p><form method="post" action="index.php"><input type="submit" class="cleLogin" value="déconnexion" name="deconnexion"></form></p><br>');
             }else{
                 echo('<a class="cleLogin" href="index.php?page=login">Login</a><br><br>');
             }

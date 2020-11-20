@@ -4,12 +4,11 @@ session_start();
 
 include('controller/database.php');
 include('controller/check_answer.php');
-
+include('controller/checkRegister.php');
+include('controller/checkUser.php');
 
 $db = dbConnection();
 
-
-include('controller/checkUser.php');
 
 $page = $_GET['page'] ?? '404';
 include './view/elements/header.php';

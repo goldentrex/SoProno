@@ -2,13 +2,71 @@
 
 //function Compare()
 
-if(isset($_POST['Voir vos résultats !'])){
-  $test = getAnswers();
-  var_dump($test);
+// if(isset($_POST['Voir vos résultats !'])){
+//   // $test = getAnswers();
+//   // var_dump($test);
+//   if(isset($_POST['question[]'])){
+//     var_dump($_POST['question[]']);
+//   }
+// }
+// function Score(){
+
+// }
+
+function Score(){
+    if(isset($_POST['question'])){
+      $question = $_POST['question'];
+      
+    $validAnswer = getAnswers();
+    var_dump($validAnswer);
+    
+    $score = 0;
+    for($i=0; $i<count($question); $i++){
+      if ($question[$i] == $validAnswer[$i]){
+        $score++;
+      }
+    }
+    return $score;
+  }
+  return 'testechoue';
 }
 
 
+$test = Score();
+var_dump($test);
 
+
+
+
+
+// if(isset($_POST['question'])){
+//   var_dump($_POST['question']);
+// }
+
+// if(isset($_POST['answerQ3'])){
+//   var_dump($_POST['answerQ3']);
+// }
+
+// if(isset($_POST['answerQ4'])){
+//   var_dump($_POST['answerQ4']);
+// }
+
+// if(isset($_POST['answerQ5'])){
+//   var_dump($_POST['answerQ5']);
+// }
+
+
+// function compare($question_id, $nom_question){
+  
+//   if(isset($_POST['answerQ4'])){
+//     var_dump($_POST['answerQ4']);
+//   }
+// }
+
+
+
+// $test2 = compare();
+// var_dump($test2);
 
 
 

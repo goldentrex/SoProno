@@ -14,7 +14,7 @@
        <p> <a href="index.php?page=login"> Connectez vous ici !</a> </p>
     </div>
 
-    <form method="post">
+    <form method="post" action="index.php">
         <p>
             <label for="name">Votre nom :</label><br />
             <input type="text" name="lastname" id="lastname" placeholder="Nom" required/>
