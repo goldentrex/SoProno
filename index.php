@@ -40,7 +40,7 @@ switch ($page) {
         include('view/page_quizz2.php');
         break;
     case "results1":
-        include('page_results1.php');
+        include('view/page_results1.php');
         break;
     case "results2":
         include('view/page_results2.php');

@@ -25,7 +25,7 @@
         <a class="link" href="index.php?page=prono"> Nos pronos</a>
         <a class="link" href="index.php?page=quizz"> Quizz</a>
         <?php if(isConnected()==1){ 
-            echo ('<a class="link" href="index.php?page=page_results1"> Resultats </a> ');} ?>
+            echo ('<a class="link" href="index.php?page=results1"> Resultats </a> ');} ?>
     
     </div>
 </header>

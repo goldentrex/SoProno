@@ -8,7 +8,7 @@
 
     <p>
        <h1 class="results"> Vos résultats </h1>
-        <?php include './controller/check_answer.php'; ?>
+      <?php //  include './controller/check_answer.php'; ?>
 
     </p>
 

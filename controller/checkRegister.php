@@ -21,7 +21,6 @@ function userRegistration(){
             
         }
         else{
-            echo('adresse déjà utiliser les mots de passe ne correspondent pas');
             return('adresse déjà utiliser les mots de passe ne correspondent pas');
         }
     }
@@ -36,6 +35,7 @@ function userRegistration(){
 if(isset($_POST['inscription'])){
     $userRegistration = userRegistration();
     if($userRegistration=="les mots de passe ne correspondent pas" || $userRegistration=="informations érronées"){
+        echo('adresse déjà utiliser les mots de passe ne correspondent pas');
         header('Location: ./index.php?page=register');
         exit();
     } 
