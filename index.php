@@ -1,7 +1,14 @@
 <?php 
 session_start();
 
+
+include('controller/database.php');
+include('controller/check_answer.php');
+include('controller/checkRegister.php');
 include('controller/checkUser.php');
+
+$db = dbConnection();
+
 
 $page = $_GET['page'] ?? '404';
 include './view/elements/header.php';
@@ -21,13 +28,16 @@ switch ($page) {
         else{
             $errorMsg .= '<a href="'."index.php?page=login".'">'."Veuillez vous connecter pour accéder aux questions".'</a>';
             echo $errorMsg;
+            echo '<h1>
+            <img src="./img/quizz.png" alt="quizz" class="centrer" height="600" width="540">
+        </h1>';
         }
         break;
     case "quizz1":
         include('view/page_quizz1.php');
         break;
     case "results1":
-        include('./controller/page_results.php');
+        include('view/page_results1.php');
         break;
     case "login":
         include('view/login.php');

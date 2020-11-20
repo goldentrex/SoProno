@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 18 nov. 2020 à 09:38
+-- Généré le :  mer. 18 nov. 2020 à 20:56
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -30,12 +30,60 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `answer`;
 CREATE TABLE IF NOT EXISTS `answer` (
-  `idanswer` int(11) NOT NULL AUTO_INCREMENT,
-  `answertext` varchar(255) NOT NULL,
-  `correctanswer` tinyint(1) NOT NULL,
-  `idanswerquestion` int(11) NOT NULL,
-  PRIMARY KEY (`idanswer`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `answer_id` int(11) NOT NULL AUTO_INCREMENT,
+  `answer_text` varchar(255) NOT NULL,
+  `is_valid_answer` tinyint(1) NOT NULL,
+  `answer_question_id` int(11) NOT NULL,
+  PRIMARY KEY (`answer_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `answer`
+--
+
+INSERT INTO `answer` (`answer_id`, `answer_text`, `is_valid_answer`, `answer_question_id`) VALUES
+(1, 'Ronaldo', 1, 1),
+(2, 'Real Madrid', 1, 2),
+(3, 'PSG', 0, 2),
+(4, 'Manchester United', 0, 2),
+(5, 'Juventus', 0, 2),
+(6, 'France', 0, 3),
+(7, 'Portugal', 1, 3),
+(8, 'Espagne', 0, 3),
+(9, '2', 1, 4),
+(10, 'Allemagne', 0, 5),
+(11, 'Grèce', 1, 5),
+(12, 'Italie', 0, 5),
+(13, 'Eder', 1, 6),
+(14, 'Hazard', 0, 6),
+(15, 'Ronaldo', 0, 6);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `question`
+--
+
+DROP TABLE IF EXISTS `question`;
+CREATE TABLE IF NOT EXISTS `question` (
+  `question_id` int(11) NOT NULL AUTO_INCREMENT,
+  `question_title` varchar(255) NOT NULL,
+  `question_quizz_id` int(11) NOT NULL,
+  `question_input_type` varchar(255) NOT NULL,
+  PRIMARY KEY (`question_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `question`
+--
+
+INSERT INTO `question` (`question_id`, `question_title`, `question_quizz_id`, `question_input_type`) VALUES
+(1, 'question1', 1, 'Le nom du capitaine du Portugal ?'),
+(2, 'question2', 1, 'Quel club est le plus ancien d\'Europe ?'),
+(3, 'question3', 1, 'Quel est le pays d\'Europe qui a gagné le dernier Euro ?'),
+(4, 'question4', 1, 'Combien de fois la France a t\'elle remporté l\'Euro?'),
+(5, 'question5', 1, 'Quel pays a remporté l\'Euro en 2004 ?'),
+(6, 'question6', 1, ' Quel est le joueur qui a marqué le but assasin en finale du dernier Euro ?');
 
 -- --------------------------------------------------------
 
@@ -45,10 +93,17 @@ CREATE TABLE IF NOT EXISTS `answer` (
 
 DROP TABLE IF EXISTS `quizz`;
 CREATE TABLE IF NOT EXISTS `quizz` (
-  `idquizz` int(11) NOT NULL,
-  `namequizz` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`idquizz`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `quizz_id` int(11) NOT NULL AUTO_INCREMENT,
+  `quizz_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`quizz_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `quizz`
+--
+
+INSERT INTO `quizz` (`quizz_id`, `quizz_name`) VALUES
+(1, 'quizz1');
 
 -- --------------------------------------------------------
 
@@ -66,24 +121,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_mail` (`user_mail`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `lastname`, `firstname`, `user_mail`, `birth_date`, `password`) VALUES
-(1, 'johnny', 'johnny', 'johnny.hall@gmail.com', '1928-03-12', 'test'),
-(2, 'john', 'smith', 'smith@hotmail.com', '1965-12-12', 'patate'),
-(3, 'james', 'bond', 'jamesbond@007.com', '2000-12-12', '$2y$10$EWNub8JDVS4SXzB3JXkk0OleYxKUQ8iE/kHjuVGykP1aUO9jPep.O'),
-(4, 'jean', 'lartiste', 'jean@test.com', '1977-10-12', '$2y$10$bOra50KLhT25OrN18JLYiuTG.nUqCOdQ6FA9.ZHUMNYouGtLcVcBK'),
-(5, 'prenom', 'quartierlatin', 'mail@mail.com', '2010-12-12', '$2y$10$Ph1a4nhV2UE/UGkiXded1OrpbFjL4dQqJjSrMxGkYv0054ndcy20S'),
-(6, 'prenom', 'quartierlatin2', 'mail2@mail.com', '2010-12-12', '$2y$10$2rnKCQKraNMEpVoGIukwRet3yUPBgG0umJ1s75Z7jZaFkQZ.Xb41O'),
-(7, 'testdelavie', 'testefficace', 'testdumail@mail.com', '2034-12-13', '$2y$10$QiGuC2NYI37FFnOuUDdDHeuoZV8FCcaLDccmUqiGOQS9mTW5E0RQe'),
-(8, 'testdupass', 'test', 'passdutest@olive.fr', '2000-09-20', '$2y$10$syc9KSqMegaGAabn6GO0h.g9JKdtqm8qWRn9ALH8Dkdp7SWUQs1Ye'),
-(9, 'pourleprof', 'capture', 'exemple@mail.com', '2020-12-12', '$2y$10$gTs37wTMSZeFZ1Q1B.tExeu9sTAUXqKBG6.ZlU977fa1c8ItvAOa.'),
-(10, 'raclette', 'fondue', 'hiver@raclette.com', '2015-12-15', '$2y$10$KNDWB5V3C26fBJsyOgJyWu5qplJmPO8Q9bUshbMio5M/IX3nbMvNO'),
-(11, 'test3', 'test1', 'test4@gmail.com', '2020-11-18', '$2y$10$ArGHigySCAt7IOHnIJeNxOoM/CeZZj7qoOpQNLY9Ct8YiNY7rlxkW');
+(1, 'johnny', 'hall', 'johnny.hall@gmail.com', '2020-11-28', '$2y$10$TyzRtefZPyASwPWRIrhKmOQuwl8FmxEjT0GPCYbGpC0ZVQk7Fu7tG'),
+(2, 'james', 'bond', 'jamesbond@007.com', '2020-11-04', '$2y$10$poWAT385zURtHCC7.uuUU.pJJwdfb026mU6bNurEW33E4nOB4ZNGK');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

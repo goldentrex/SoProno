@@ -19,7 +19,6 @@ function dbConnection(){
     return $db;
 }
 
-
 function getUserinformation($user_mail){
 
     $db = dbConnection();
@@ -50,16 +49,20 @@ function setRegistration($firstname, $lastname, $user_mail, $birth_date, $hash){
 }
 
 // récupération des réponses
-function getGoodAnswers($idAnswers){
-    $db = dbConnection();
 
-    $query =$db->prepare('SELECT * FROM answers WHERE idAnswers=:id');
-    $query->execute(array(
-        'id'=>$idAnswers
-    ));
-    $goodAnswers = $query->fetchAll();
-    return $goodAnswers;
-}
+function getAnswers(){ 
+    $db = dbConnection(); 
+    $statement = $db->prepare("SELECT answer_text FROM answer WHERE is_valid_answer = 1"); 
+    $statement->execute(); 
+    $validAnswer = $statement->fetchAll(); 
+    $total = array_column($validAnswer,'answer_text'); 
+    return $total; 
+     
+} 
+
 
 ?>
+
+
+
 
