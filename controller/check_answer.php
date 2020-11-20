@@ -1,7 +1,21 @@
 <?php
 
+<<<<<<< HEAD
 $answers = getAnswers();
 var_dump($answers);
+=======
+//function Compare()
+
+if(isset($_POST['Voir vos résultats !'])){
+  $test = getAnswers();
+  var_dump($test);
+}
+
+
+
+
+
+>>>>>>> php_v2
 
 ?>
 

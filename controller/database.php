@@ -49,6 +49,7 @@ function setRegistration($firstname, $lastname, $user_mail, $birth_date, $hash){
 }
 
 // récupération des réponses
+<<<<<<< HEAD
 function getAnswers(){
     $db = dbConnection();
     $statement = $db->prepare("SELECT answer_text FROM answer WHEN is_valid_answer == 1");
@@ -62,6 +63,25 @@ function getAnswers(){
 
 
 
+=======
+
+function getAnswers(){
+    $db = dbConnection();
+    $statement = $db->prepare("SELECT answer_text FROM answer WHERE is_valid_answer = 1");
+    $statement->execute();
+    $validAnswer = $statement->fetchAll();
+    return $validAnswer;
+}
+
+
+// function getAnswers(){
+//     $db = dbConnection();
+// ​    $query = $db->prepare("SELECT answer_text FROM answer WHEN is_valid_answer == 1");
+//     $query -> execute();
+//     $validAnswer = $query->fetchAll();
+//     return $validAnswer;
+// }​​​​
+>>>>>>> php_v2
 
 ?>
 
