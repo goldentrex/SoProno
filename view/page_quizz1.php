@@ -16,7 +16,11 @@
     <br />
     <hr>
 
+<<<<<<< HEAD
+    <form method="post" action="index.php?page=results1">
+=======
     <form method="post" action="index.php">
+>>>>>>> php_v2
 
       <div>
         <div class="question">
