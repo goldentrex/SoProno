@@ -8,6 +8,9 @@
     
     <section>
        Work in progress prono
+        <h1>
+       		<img src="./img/work_in_progress.jpg" alt="work_in_progress">
+       	</h1>
     </section>
     <footer>
         <?php //include 'footer.php'?>

@@ -28,6 +28,9 @@ switch ($page) {
         else{
             $errorMsg .= '<a class="intro_account" href="'."index.php?page=login".'">'."Veuillez vous connecter pour accéder aux questions".'</a>';
             echo $errorMsg;
+            echo '<h1>
+            <img src="./img/quizz.png" alt="quizz" class="centrer" height="600" width="540">
+        </h1>';
         }
         break;
     case "quizz1":

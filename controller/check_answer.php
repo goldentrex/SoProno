@@ -1,6 +1,6 @@
 <?php
 
-$answers = getAnswers($id);
+$answers = getAnswers();
 var_dump($answers);
 
 ?>

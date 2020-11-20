@@ -13,7 +13,7 @@
             if(isConnected()==1){
                 echo ('<p><form method="post" action="index.php"><input type="submit" class="clelogin" value="déconnexion" name="deconnexion"></form></p><br>');
             }else{
-                echo('<a class="cleLogin" href="index.php?page=login">Login</a><br><br>');
+                echo('<br><a class="cleLogin" href="index.php?page=login">Login</a><br><br>');
             }
             ?>
             <a class="account" href="index.php?page=register">Créer son compte</a>
@@ -24,6 +24,8 @@
         <a class="link" href="index.php?page=matchs"> Matchs à venir </a>
         <a class="link" href="index.php?page=prono"> Nos pronos</a>
         <a class="link" href="index.php?page=quizz"> Quizz</a>
+        <?php if(isConnected()==1){ 
+            echo ('<a class="link" href="index.php?page=page_results1"> Resultats </a> ');} ?>
     
     </div>
 </header>

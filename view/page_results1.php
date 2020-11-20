@@ -8,7 +8,8 @@
 
     <p>
        <h1 class="results"> Vos résultats </h1>
-       <h1> Votre score est de : <?php echo $score ?> </h1>
+        <?php include './controller/check_answer.php'; ?>
+
     </p>
 
   </body>

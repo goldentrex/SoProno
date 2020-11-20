@@ -5,7 +5,7 @@ function dbConnection(){
     $db_host='localhost';
     $db_user='root';
     $db_name ='soprono';
-    $db_password = '';
+    $db_password = 'root';
 
     try{
         $db = new PDO("mysql:host=" . $db_host . ";dbname=" .$db_name, $db_user, $db_password);
@@ -49,16 +49,22 @@ function setRegistration($firstname, $lastname, $user_mail, $birth_date, $hash){
 }
 
 // récupération des réponses
-function getAnswers($id){
+function getAnswers(){
     $db = dbConnection();
+    $statement = $db->prepare("SELECT answer_text FROM answer WHEN is_valid_answer == 1");
+    $statement -> execute();
+    $validAnswer = $statement->fetchAll();
+    return validAnswer;
 
-    $query =$db->prepare('SELECT * FROM answers WHERE idAnswers=:id');
-    $query->execute(array(
-        'id'=>$id
-    ));
-    $goodAnswers = $query->fetchAll();
-    return $goodAnswers;
 }
 
+
+
+
+
+
 ?>
+
+
+
 
