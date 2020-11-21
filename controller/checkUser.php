@@ -6,8 +6,15 @@ function userDisconnect(){
     $_SESSION=array();
 }
 
-function isRegistered(){
 
+
+function isConnected() {
+    if(isset($_SESSION["connected"])){
+        return 1;
+    }
+    else{
+        return 0;
+    }
 }
 
 function userConnexion() {

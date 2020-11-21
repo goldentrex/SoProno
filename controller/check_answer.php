@@ -2,13 +2,13 @@
 
 //function Compare()
 
-// if(isset($_POST['Voir vos résultats !'])){
-//   // $test = getAnswers();
-//   // var_dump($test);
-//   if(isset($_POST['question[]'])){
-//     var_dump($_POST['question[]']);
-//   }
-// }
+if(isset($_POST['Voir vos résultats !'])){
+  // $test = getAnswers();
+  // var_dump($test);
+  if(isset($_POST['question[]'])){
+    var_dump($_POST['question[]']);
+  }
+}
 // function Score(){
 
 // }
@@ -19,6 +19,7 @@ function Score(){
       
     $validAnswer = getAnswers();
     var_dump($validAnswer);
+    var_dump($question);
     
     $score = 0;
     for($i=0; $i<count($question); $i++){

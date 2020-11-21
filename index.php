@@ -34,7 +34,7 @@ switch ($page) {
         }
         break;
     case "quizz1":
-        include('view/page_quizz1.php');
+        include('view/page_quizz.php');
         break;
     case "results1":
         include('view/page_results1.php');
