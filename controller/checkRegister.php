@@ -21,24 +21,27 @@ function userRegistration(){
     isset($_POST['birth_date']) &&
     isset($_POST['password']) &&
     isset($_POST['password_confirmation'])){
-        if($_POST['password']==$_POST['password_confirmation']){
-            // && ($_POST["user_mail"]==$data[0]['user_mail']
+        if($_POST['password']==$_POST['password_confirmation'] && $_POST["user_mail"]!=$data[0]['user_mail']){
 
 // ------------------------ Fonction de hashage : source : manuel php : https://www.php.net/manual/fr/function.password-hash.php ------------------------
             $hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
             $registercheck = setRegistration($_POST['lastname'],$_POST['firstname'],$_POST['user_mail'],$_POST['birth_date'],$hash);
+            return(true);
             
         }
         else{
-            return('adresse déjà utiliser les mots de passe ne correspondent pas');
+            return(false);
         }
+
     }
     else{
-        return('informations érronées');
+        return(false);
     }
  
 }
 
+
+//  && $_POST["user_mail"]==$data[0]['user_mail']
 // Vérification pour l'inscription
 // $h=isRegistered();
 // var_dump($h);
@@ -48,12 +51,11 @@ if(isset($_POST['inscription'])){
     //if(isRegistered()==0){
     
         $userRegistration = userRegistration();
-        if($userRegistration=="les mots de passe ne correspondent pas" || $userRegistration=="informations érronées"){
-            echo('adresse déjà utiliser les mots de passe ne correspondent pas');
+        if($userRegistration==false){
             header('Location: ./index.php?page=register');
             exit();
         } 
-        else {
+        elseif($userRegistration==true) {
             header('Location: ./index.php?page=login');
             exit();
     
