@@ -5,7 +5,7 @@ function dbConnection(){
     $db_host='localhost';
     $db_user='root';
     $db_name ='soprono';
-    $db_password = '';
+    $db_password ='root';
 
     try{
         //global $db;
