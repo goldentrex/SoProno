@@ -8,7 +8,16 @@
 
     <p>
        <h1 class="results"> Vos résultats </h1>
-      <?php //  include './controller/check_answer.php'; ?>
+
+      <?php
+      $score=Score(); 
+      if($score>=5){
+        echo "<h2>bravo, vous avez fait le score maximal ! </h2><br> Votre score :".$score;
+      }elseif($score<4){
+        echo "<h2>pas mal ! mais vous pouvez encore vous améliorer ! </h2></br>".$score;
+      }
+      
+      ?>
 
     </p>
 

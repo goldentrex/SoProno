@@ -29,8 +29,9 @@ function Score(){
     }
     return $score;
   }
-  return 'testechoue';
 }
+
+
 
 
 $test = Score();
