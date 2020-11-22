@@ -1,10 +1,19 @@
 <?php
 
-function isRegistered(){
-}
+// function isRegistered(){
+//     if(isset($_POST['user_mail'])){
+//         $checkmail = getMail($_POST['user_mail']);
+//         if(!empty($checkmail)){
+//             return 1;
+//         }
+//         else{
+//             return 0;
+//         }
+//     }
+// }
 
 function userRegistration(){
-    $data = getUserinformation($_POST["user_mail"]);
+    
     if(
     isset($_POST['lastname']) &&
     isset($_POST['firstname']) &&
@@ -31,19 +40,29 @@ function userRegistration(){
 }
 
 // Vérification pour l'inscription
+// $h=isRegistered();
+// var_dump($h);
+
 
 if(isset($_POST['inscription'])){
-    $userRegistration = userRegistration();
-    if($userRegistration=="les mots de passe ne correspondent pas" || $userRegistration=="informations érronées"){
-        echo('adresse déjà utiliser les mots de passe ne correspondent pas');
-        header('Location: ./index.php?page=register');
-        exit();
-    } 
-    else {
-        header('Location: ./index.php?page=login');
-        exit();
+    //if(isRegistered()==0){
+    
+        $userRegistration = userRegistration();
+        if($userRegistration=="les mots de passe ne correspondent pas" || $userRegistration=="informations érronées"){
+            echo('adresse déjà utiliser les mots de passe ne correspondent pas');
+            header('Location: ./index.php?page=register');
+            exit();
+        } 
+        else {
+            header('Location: ./index.php?page=login');
+            exit();
+    
+        }
 
-    }
+    // }else{
+    //     echo('adresse deja utilisée');
+    // }
+   
 }
 
 ?>

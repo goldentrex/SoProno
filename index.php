@@ -5,7 +5,7 @@ session_start();
 include('controller/database.php');
 include('controller/check_answer.php');
 include('controller/checkRegister.php');
-include('controller/checkUser.php');
+// include('controller/checkUser.php');
 
 $db = dbConnection();
 

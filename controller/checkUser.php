@@ -7,8 +7,7 @@ function userDisconnect(){
 }
 
 
-
-function isConnected() {
+function isConnected(){
     if(isset($_SESSION["connected"])){
         return 1;
     }
